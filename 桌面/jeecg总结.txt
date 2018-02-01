@@ -1,0 +1,232 @@
+1.     eclipse修改eclipse默认的jdk版本
+windows--preference--java--compiler，前三个修改为适合自己的jdk版本
+windows--preference--java --installed JREs，选择本地jre的安装路径
+
+2. maven中添加阿里的镜像；
+<mirrors> 
+       <mirror> 
+            <id>nexus-aliyun</id> 
+            <mirrorOf>*,!jeecg,!jeecg-snapshots</mirrorOf> 
+            <name>Nexus aliyun</name> 
+<url>http://maven.aliyun.com/nexus/content/groups/public</url> 
+        </mirror>  
+ </mirrors> 
+ 
+ 3. maven中jar包更新不了的，搜索*.lastupdate,将其所有删除，重新下载；
+ 
+ 4.在tomcat的Overview窗口视图，将timeouts时间设置长一点；
+ 
+ 5.将项目直接放进本地tomcat中，启动tomcat即可，运行；
+ 
+ 6. 根据条件查询出错，undefined对应sql语句判断的exists，第一种解决将参数中""设置成undefined， 另外一种解决方式将sql语句修改<#if beginTime ?exists && beginTime != ''>，3 .&& jeecgMinidao.salary ?length gt 0
+ 
+ 7.解决日期显示为日期格式， 1. JS 时间格式CST转GMT，http://blog.csdn.net/u012463017/article/details/53378363，2. java后台sql语句直接formate格式
+ 
+ 8启动报错，init过滤器，修改web.xml中webaoo xmlns 有重复的删除就可以了；
+ 
+ 9. 项目不用放在tomcat里面也可以启动，4种部署方式<Context path="/XXX" reloadable="true" docBase="D:\workspace\WebApp\AppName" workDir="D:\workspace\WebApp\work"/>  
+ 
+ 10.数据字典，需要在表单中配置 字典code，页面中会加上dictionary="cardUse"
+ 
+ http://localhost:8080/jeecg/api/cakeController.do?wxlogin
+ json格式传参
+         {
+                body:{
+                    code:"900000",
+                    id:"3651",
+                    wxopenid:"GroupUser",    
+                    },
+                }
+
+
+10.  //	 ERROR > WARN > INFO > DEBUG				
+		
+11.
+ 分页sql:
+ SELECT
+	*
+FROM
+	common_card	
+WHERE sys_company_code = :sysCompanyCode
+and sys_org_code = :sysOrgCode
+ORDER BY create_date desc
+limit ${page}, ${size}		
+
+12. 
+  
+ //String filePath = "http://localhost:8080"+request.getContextPath()+"/"+image_name;
+			// String path=request.getServletContext().getContextPath()+"/"+image_name;
+//			 String realpath = request.getSession().getServletContext().getRealPath("/upload/files");  
+			 String realpath = request.getSession().getServletContext().getRealPath("");  
+			 String filePath = realpath+"/"+image_name;
+	 
+	 
+13. 
+		/ 
+  获取精确到秒的时间戳 
+ * @param date 
+ * @return 
+ /  
+public static int getSecondTimestampTwo(Date date){  
+    if (null == date) {  
+        return 0;  
+    }  
+    String timestamp = String.valueOf(date.getTime()/1000);  
+    return Integer.valueOf(timestamp);  
+} 
+
+14.
+工程页面路径:
+ webpage/com/jeecg/common/cardCoupons.jsp
+ 
+ 
+ 15.
+ cgAutoListController.do?datagrid&configId=mall_qyinf
+	
+	只看本人
+	等于
+	create_by
+	#{sys_user_code}
+	
+	只看本公司
+	模糊
+	sys_company_code
+	#{sys_company_code}
+	
+	
+mallQyinfoController.do?datagrid
+	只看本人
+	#{sys_user_code}
+	==
+	createBy
+	
+	只看本公司
+	模糊
+	sysCompanyCode
+	#{sys_company_code}
+	
+	
+16. 
+	<!--指定本地仓库位置-->
+	<repository>
+		<id>central</id>
+		<url>file://E:\java\repos</url>
+	</repository>	
+	
+
+17.
+	//询问框
+		layer.confirm('确认退款吗？', {
+		  btn: ['确定','取消'] //按钮
+		}, function(){
+	 layer.msg('操作成功', {icon: 1});
+	 layer.msg('操作失败', {icon: 2});				 
+		}, function(){
+			layer.msg('已取消', {
+					time: 1000, //1s后自动关闭
+				  });
+		});
+		
+		 layer.confirm('您确定要注销吗？', {
+            btn: ['确定','取消'], //按钮
+            shade: false //不显示遮罩
+        }, function(){
+            location.href="loginController.do?logout";
+        }, function(){
+            return;
+        });
+	
+18.
+	
+	'${pageContext.request.contextPath}/authAction!doNotNeedSession_treeRecursive.action'
+	value="${sessionScope.user.userAddress }"
+
+19.
+解决：Uncaught TypeError: Cannot read property 'msie' of undefined
+
+在jq下面引入：
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	
+或者
+在jq中合适位置加入
+加载顺序在jQuery文件之后，$.browser的代码之前。
+jQuery.browser={};(function(){jQuery.browser.msie=false; jQuery.browser.version=0;if(navigator.userAgent.match(/MSIE ([0-9]+)./)){ jQuery.browser.msie=true;jQuery.browser.version=RegExp.$1;}})();
+		
+或者
+$.browser.msie =/msie/.test(navigator.userAgent.toLowerCase())    
+  等号左边是jquery 9以下版本兼容的书写方式，右边是从上向下兼容的书写形式，然后到用到的js文件中找到$.browser.msie   替换成 /msie/.test(navigator.userAgent.toLowerCase())  就行了
+或者解决地址：
+http://www.cnblogs.com/bober/p/3965174.html	
+	
+20.
+
+table-striped 
+
+<table id="dataGridTableJson" class="table table-striped table-bordered table-hover table-condensed" style="width:100%;">
+	
+
+21.
+授权
+chmod 755  file 
+chmod 777  haha.sh 	
+	
+	
+	
+22.
+
+function GetUrlPara()
+	　　{
+	　　　　var url = document.location.toString();
+	　　　　var arrUrl = url.split("?");	
+	　　　　var para = arrUrl[1];
+	　　　　return para;
+	　　}
+
+$(document).ready(function () {
+	var thisURL = document.URL;    
+	var getval =thisURL.split('?')[1];  
+	gid=(getval.split('&')[0]).split('=')[1];
+	qid=(getval.split('&')[1]).split('=')[1];
+	//gid=getval.split('=')[1];
+});
+
+	
+	
+	
+财务管理
+显示总数量，
+，显示订单基本情况--按照时间降序排序
+修改订单样式，
+数据分析--访问分析中，将菜单请求中的jsp，换成接口请求
+status	状态：0-取消，1-默认，2-支付，3-发货，4-收货，5-退款
+getMarketFinanceStatusNum
+getMarketFinanceListManager
+查询期间订单总数  status = 2 3 4 
+用户上传logo，登陆成功显示logo，
+E:\java\work\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\jeecg\plug-in\login\images
+cgAutoListController.do?list&id=market_logo
+marketlogo.do?manager
+csr
+sql对应写
+MallDao ---getMarketOrderListManager
+sql ；MallDao_getgetMarketOrderListManager.sql
+	二维码管理的 两个删除按钮
+		修改菜单图标
+web -- build ---littleprogramanalysis-接口实现
+资金 根据使用者搜索
+下拉选项，紧致选择复选框	
+订单资金， -- 
+商品资金 -- 显示商品的一些信息，对商品总价格统计，group by product_id	
+页面最大化
+部分页面优化
+菜单类型改成权限类型
+logo里面数据权限配置，，两个保存   ok
+完成启动页的海报-禁用启用按钮设置，
+数据权限控制
+代码生成不能上传图片
+树形结构时候，不显示图片，显示的是图片路径
+在线开发的一些问题
+	
+	
+	
+

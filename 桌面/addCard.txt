@@ -1,0 +1,303 @@
+<%@ page language="java" import="java.util.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@include file="/context/mytags.jsp"%>
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>卡券表</title>
+  <t:base type="jquery,easyui,tools,DatePicker"></t:base> 
+  <script type="text/javascript">
+  //编写自定义JS代码
+  </script>
+ </head>
+ <body>
+ <%--  <t:formvalid formid="formobj" dialog="true" usePlugin="password" layout="table" action="commonCardController.do?doAdd" > --%>
+  <form action="commonCardController.do?doAdd" method="POST" enctype="multipart/form-data">
+		<input id="id" name="id" type="hidden" value="${commonCardPage.id }"/>
+		<input id="createName" name="createName" type="hidden" value="${commonCardPage.createName }"/>
+		<input id="createBy" name="createBy" type="hidden" value="${commonCardPage.createBy }"/>
+		<input id="createDate" name="createDate" type="hidden" value="${commonCardPage.createDate }"/>
+		<input id="updateName" name="updateName" type="hidden" value="${commonCardPage.updateName }"/>
+		<input id="updateBy" name="updateBy" type="hidden" value="${commonCardPage.updateBy }"/>
+		<input id="updateDate" name="updateDate" type="hidden" value="${commonCardPage.updateDate }"/>
+		<input id="sysOrgCode" name="sysOrgCode" type="hidden" value="${commonCardPage.sysOrgCode }"/>
+		<input id="sysCompanyCode" name="sysCompanyCode" type="hidden" value="${commonCardPage.sysCompanyCode }"/>
+		<table style="width: 600px;" cellpadding="0" cellspacing="1" class="formtable">
+
+				<tr>
+					<td align="right">
+						<label class="Validform_label">
+							logo:
+						</label>
+					</td>
+					<td class="value">
+					      		<input id="logoUrl" name="logourl" type="file" style="width: 150px" class="inputxt" 
+					      						/>
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">logo</label>
+						</td>
+					</tr>
+				<tr>
+					<td align="right">
+						<label class="Validform_label">
+							商户名字:
+						</label>
+					</td>
+					<td class="value">
+						<input id="codeType" name="codeType" type="hidden" value="CODE_TYPE_TEXT" style="width: 150px" class="inputxt" />
+					    <input id="type" name="type" type="hidden" value="DATE_TYPE_FIX_TIME_RANGE" style="width: 150px" class="inputxt" />
+					    <input id="centerUrl" name="centerUrl" type="hidden" value="www.baidu.com" style="width: 150px" class="inputxt" />
+					     	 <input id="brandName" name="brandName" value="商户名字" type="text" style="width: 150px" class="inputxt" 
+					     	  ignore="ignore"
+					     	  />
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">商户名字</label>
+					</td>
+					<td align="right">
+						<label class="Validform_label">
+							卡券名:
+						</label>
+					</td>
+					<td class="value">
+					     	 <input id="title" name="title" type="text" value="卡券名" style="width: 150px" class="inputxt" 
+					     	  
+					     	  ignore="ignore"
+					     	  />
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">卡券名</label>
+						</td>
+					</tr>
+				<tr>
+					<td align="right">
+						<label class="Validform_label">
+							券颜色:
+						</label>
+					</td>
+					<td class="value">
+					     	 <input id="color" name="color" type="text" value="Color010" style="width: 150px" class="inputxt" 
+					     	  
+					     	  ignore="ignore"
+					     	  />
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">券颜色</label>
+						</td>
+					<td align="right">
+						<label class="Validform_label">
+							卡券使用提醒:
+						</label>
+					</td>
+					<td class="value">
+					     	 <input id="notice" name="notice" type="text" value="卡券使用提醒" style="width: 150px" class="inputxt" 
+					     	  
+					     	  ignore="ignore"
+					     	  />
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">卡券使用提醒</label>
+						</td>
+					</tr>
+				<tr>
+					<td align="right">
+						<label class="Validform_label">
+							卡券使用说明:
+						</label>
+					</td>
+					<td class="value">
+					     	 <input id="description" name="description"  value="卡券使用说明"  type="text" style="width: 150px" class="inputxt" 
+					     	  
+					     	  ignore="ignore"
+					     	  />
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">卡券使用说明</label>
+						</td>
+					<td align="right">
+						<label class="Validform_label">
+							卡券库存的数量:
+						</label>
+					</td>
+					<td class="value">
+					     	 <input id="quantity" name="quantity" type="text" value="100" style="width: 150px" class="inputxt" 
+					     	  
+					     	  ignore="ignore"
+					     	  />
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">卡券库存的数量</label>
+						</td>
+					</tr>
+				<tr>
+					<td align="right">
+						<label class="Validform_label">
+							起用时间:
+						</label>
+					</td>
+					<td class="value">
+					     	 <input id="beginTimestamp" name="beginTimestamp" value="2017-10-23" type="text" style="width: 150px" class="inputxt" 
+					     	  
+					     	  ignore="ignore"
+					     	  />
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">起用时间</label>
+						</td>
+					<td align="right">
+						<label class="Validform_label">
+							结束时间:
+						</label>
+					</td>
+					<td class="value">
+					     	 <input id="endTimestamp" name="endTimestamp" value="2017-12-20" type="text" style="width: 150px" class="inputxt" 
+					     	  ignore="ignore"
+					     	  />
+					     	 <input id="isAudit" name="isAudit" value=0 type="hidden" style="width: 150px" class="inputxt"/>
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">结束时间</label>
+						</td>
+				</tr>
+				
+				<tr> 
+			 		<td align="right">
+						<label class="Validform_label">
+							卡券是否可转赠:
+						</label>
+					</td>
+					<td class="value">
+					   <!--   	 <input id="canGiveFriend" name="canGiveFriend" value=0 type="text" style="width: 150px" class="inputxt" 
+					     	  
+					     	  ignore="ignore"
+					     	  /> -->
+					     	  可以 ：<input id="canGiveF" name="canGive" value=1 type="radio" />
+					     	  不可以： <input id="canGive" name="canGive" value=0 type="radio" />
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">卡券是否可转赠</label>
+						</td> 
+						
+					<td align="right">
+						<label class="Validform_label">
+							卡券领取页面是否可分享:
+						</label>
+					</td>
+					<td class="value">
+					     	<!--  <input id="canShare" name="canShare" value=0 type="text" style="width: 150px" class="inputxt" 
+					     	  
+					     	  ignore="ignore"
+					     	  /> -->
+					     	  可以 ：<input id="canGiveF" name="canGive" value=1 type="radio" />
+					     	  不可以： <input id="canGive" name="canGive" value=0 type="radio"  />
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">卡券领取页面是否可分享</label>
+						</td>
+					</tr>
+				<tr>
+							
+					<tr>
+					<td align="right">
+						<label class="Validform_label">
+							是否立即发放，是否可用:
+						</label>
+					</td>
+					<td class="value">
+					     	<!--  <input id="cardUse" name="cardUse" value="0" type="text" style="width: 150px" class="inputxt" 
+					     	  ignore="ignore"
+					     	  /> -->
+					     	    可以 ：<input id="canGiveF" name="canGive" value=1 type="radio" />
+					     	  不可以： <input id="canGive" name="canGive" value=0 type="radio" />
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">是否可用</label>
+					</td>
+						
+					<td align="right">
+						<label class="Validform_label">
+							卡券类型:(代金券)
+						</label>
+					</td>
+					<td class="value">
+					     	 <input id="cardType" name="cardType" value="CASH" type="text" style="width: 150px" class="inputxt" 
+					     	  ignore="ignore"
+					     	  />
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">卡券类型</label>
+						</td>
+					</tr>
+					<tr>
+					 <td align="right">
+						<label class="Validform_label">
+							每人可领券的数量:
+						</label>
+					</td>
+					<td class="value">
+					     	 <input id="getLimit" name="getLimit" type="text" value=10 style="width: 150px" class="inputxt" 
+					     	  
+					     	  ignore="ignore"
+					     	  />
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">每人可领券的数量</label>
+					</td>
+					</tr>
+				<tr>
+					<td align="right">
+						<label class="Validform_label">
+							每人可核销的数量:
+						</label>
+					</td>
+					<td class="value">
+					     	 <input id="useLimit" name="useLimit" type="text" value=10 style="width: 150px" class="inputxt" 
+					     	  
+					     	  ignore="ignore"
+					     	  />
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">每人可核销的数量</label>
+						</td>
+					<td align="right">
+						<label class="Validform_label">
+							起用金额:
+						</label>
+					</td>
+					<td class="value">
+					     	 <input id="leastCost" name="leastCost" type="text" value=120 style="width: 150px" class="inputxt" 
+					     	  
+					     	  ignore="ignore"
+					     	  />
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">起用金额</label>
+						</td>
+					</tr>
+					
+				<tr>
+					<td align="right">
+						<label class="Validform_label">
+							减免金额:
+						</label>
+					</td>
+					<td class="value">
+					     	 <input id="reduceCost" name="reduceCost" type="text" value=10 style="width: 150px" class="inputxt" 
+					     	  
+					     	  ignore="ignore"
+					     	  />
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">减免金额</label>
+						</td>
+						
+					<td align="right">
+						<label class="Validform_label">
+							客服电话:
+						</label>
+					</td>
+					<td class="value">
+					     	 <input id="servicePhone" name="servicePhone" type="text" value=10 style="width: 150px" class="inputxt" 
+					     	  
+					     	  ignore="ignore"
+					     	  />
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">客服电话</label>
+						</td>
+						
+			<!-- 	<td align="right">
+					<label class="Validform_label">
+					</label>
+				</td>
+				<td class="value">
+				</td> -->
+					</tr> 
+			</table>
+			<input type="submit" value="提交" />
+			</form>
+		<%-- </t:formvalid> --%>
+ </body>
+  <script src = "webpage/com/jeecg/common/commonCard.js"></script>		

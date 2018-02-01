@@ -1,0 +1,129 @@
+function isNumberBy100(ssn) {
+ var re = /^[0-9]*[0-9]$/i;       //校验是否为数字
+ if(re.test(ssn) && ssn%100===0) {
+  return true;
+ }else {
+  return false;
+ }
+}
+
+	var gs_time=times.slice(0,4)+"-"+times.slice(4,6)+"-"+times.slice(6,8)
+							+" "+times.slice(8,10)+":"+times.slice(10,12)+":"+times.slice(12,14);
+
+adobe  cc       626418302@qq.com    Ljj123..
+
+Jquery 代码如下： 
+$(window).load(function (){ 
+       // 编写代码  
+});
+
+等价于 JavaScript 中的以下代码 
+Window.onload = function (){ 
+     // 编写代码 
+}
+
+$(document).ready(function(){
+    //do something...
+});
+ $(document).ready(function(){})可以简写成$(function(){});
+ 
+ 
+ 
+ 
+ 在js里面设置样式
+ $('#test').css({color:'red',width:'100px','background-color':'blue',textDecoration:'underline'});
+上面的代码会将id为test的元素的宽度设为100像素，文字颜色红色，背景色蓝色，并带有下划线。
+当属性有连字符“-”时，需要在属性前后加上引号（如"background-color"），或者用驼峰式写法（如textDecoration）。
+
+
+
+两种在js里面设置样式的区别
+$("#id").style.display='none'和$("#id").css("display","none");
+.style()是为元素生成样式，.css()是改变元素现有样式
+
+
+windows 查看进程，kill掉tomcat
+netstat -ano | findstr 8080
+taskkill /F /PID 2960
+
+
+
+/* 当屏幕小于960px执行媒体查询 */
+  @media screen and (max-width: 960px) {
+		   body{
+		    width:50% !important;
+		   }
+		}
+		
+/*使用媒体查询匹配屏幕大小*/
+@media screen and (max-width:1920px) and (min-width:640px) {
+    .container1{
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+    /*640*/
+    @media screen and (max-width: 640px) {
+        .container1 {
+            padding-left: 1%;
+            padding-right: 1%;
+        }
+    }
+	
+	/*屏幕大于768 执行*/
+ @media (min-width:768px){
+            body{ background:pink;}
+        }
+	
+	
+	<body  onLoad="Resize()" >
+	</body>
+	$(function(){
+		Resize = function(){
+				        var wwww = $(window).width(),
+				            hhhh = $(window).height();
+				        $("body").css({
+				            "width":wwww,
+				            "overflow-x":"hidden",
+				            "overflow-y":"visible"
+				        });
+				        
+				        $(".content").css({
+				            "width":wwww,
+				        });
+				        if(wwww<=700){
+				            $("body").css({
+				                "overflow":"auto"
+				            });
+				        }     
+				    };
+		});
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			function justIsNull(){
+				$("#deliveryForm input[type=text]").each(function() {
+					var text = $(this).val();
+					//若当前input为空，则alert提醒 
+					if(text== "" || text.trim() == "") {
+						layer.open({
+							content: '不能为空',
+							style: 'background:#fff;color:#333;border:none;font-size:0.38rem;border-radius:10px;',
+						});
+						return false;
+						}else{
+							return true;
+						}
+				}); 
+			}	
+		
+		
+		
+		
+		
+		

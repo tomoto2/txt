@@ -1,0 +1,22 @@
+ 名称                  name值                   类型
+团购类型               cardType=CASH          hidden  隐藏域 
+起用金额               least_cost              text  int  单位元
+减免金额               reduce_cost             text int  单位元
+卡券的商户logo          logo_url             text 图片 建议像素为300*300
+码型                  code_type=CODE_TYPE_TEXT      hidden
+商户名字               brand_name                 text 例如：海底捞
+卡券名                  title                    text 字数上限为9个汉字
+券颜色                 color                      text 例如：Color010
+卡券使用提醒            notice                 text 字数上限为16个汉字。
+卡券使用说明            description            text 字数上限为1024个汉字。
+卡券库存的数量            quantity                 text 字数上限为16个汉字。
+时间设定类型            type=DATE_TYPE_FIX_TERM        隐藏域
+自领取后多少天内有效            fixed_term             天数 不支持填写0。
+自领取后多少天开始生效           fixed_begin_term      天数 领取后当天生效填写0。。
+统一过期时间            end_timestamp                 时间选择日历，精确到秒
+客服电话            service_phone                 text 
+适用门店            location_id_list                 下拉框  先写假数据
+每人可领券的数量限制   get_limit                    text  填写数字
+每人可核销的数量限制     use_limit                  text  填写数字
+卡券领取页面是否可分享  can_share                 0 不可以   1可以
+卡券是否可转赠。    can_give_friend            0 不可以  1 可以

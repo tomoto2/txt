@@ -1,0 +1,151 @@
+1. 会员卡的创建
+2. 修改添加卡券的按钮限制，日期显示的格式，金额的类型
+金额改为String 类型
+paramChildGroupon.accumulate("least_cost", Double.valueOf(commonCard.getLeastCost()) *100); // 3 单位转为分
+		paramChildGroupon.accumulate("reduce_cost",  Double.valueOf(commonCard.getReduceCost()) *100);//4 单位转为分
+数据统计  显示更多	
+卡券界面的优化
+数据统计 屏幕自适应
+Number(data).toFixed(4)
+
+内网
+car123456
+ailawu 123456
+market 123456
+
+外网 hongtai
+ ailawu  ailawu
+ hongtai hongtai
+  
+蛋糕 gh_1c38cb7ffa20@app
+汽贸 gh_d08bb5cb2d0b@app
+
+同步微信用户菜单到外网
+卡券的新加字段同步外网
+
+
+ 独流操作：
+ StringBuffer buffer = new StringBuffer();
+ String temp= "";
+ while((temp = buffer.readLine()) != null){
+ 
+ buffer.append(temp);
+ }
+ 
+ buffer.colse();
+ 
+
+2017-10-30
+1. 每天将服务器上的catalina.out.下载下来，排查报错；使用文档记录；
+2. 完成响应式页面的修改；
+3. 检查用户画像为什么有时候没有数据
+4. 概况，日周月的计算，规则
+
+用户画像是实时获取的
+String s2 = new String(json.toString().getBytes("ISO-8859-1"), "UTF-8");
+
+
+2017-10-31
+服务器日志记录下载下来，解决报错；使用文档记录；
+优化后台代码，修改页面；
+电脑安装微信小程序开发工具；
+
+
+2017-11-1
+
+服务器日志错误排查；
+财务管理中添加“线下资金”列表查询及搜索：
+jeecg中配置restful风格路径访问。
+
+购买人（微信号），下单时间，计算总金额显示）
+外网测试支付回调
+
+https://www.tongchuangkeji.net/tckj/wxpay/callback.do?message
+1234567890123456789012345678901234567890123456789012345678901234
+
+User_pay_from_pay_cell
+User_pay_from_pay_cell
+
+<#if buyer ?exists && buyer != ''>
+AND t2.wxname like '%${buyer}%'
+AND t2.wxname = :buyer
+</#if>
+
+2017-11-2
+商品拼搜索
+支付回调
+
+2017-11-3
+服务器日志错误排查
+后台页面及功能的优化
+
+
+
+
+服务器日志错误排查及记录；
+小程序的测试，后台完成响应式页面的修改；
+后台新菜单的添加及功能实现；
+
+
+
+
+sysConfig: notify_url=https://www.tongchuangkeji.net/tckj/rest/wxpay/callback/xml
+spring-mvc：value
+代码 value
+
+2017-11-8
+禹州非常时尚精品女装
+非常时尚精品女装
+选择核销方式
+
+该代金券仅用于禹州非常时尚精品女装，详情请咨询客服
+13782251661
+100 - 5
+1000 
+100
+100
+
+
+
+wxUtils---addBounds
+
+服务器日志错误排查及记录;
+实现为用户添加会员卡积分;
+修改后台页面按钮明显区分.
+
+ 商品--搜索按钮显示在上面，
+ 修改退款模态框
+ 数据列表显示多一些
+  查看拼团订单详情，详情显示不完全
+ 根据订单号查询订单信息
+
+
+
+ 2017-11-9
+写系统总结及想法优化；、、、周五之前
+
+后台优化，
+轮播图显示
+
+ 
+ 
+ 查看拼团订单，显示完全修改；根据订单号查询订单信息；后台添加商品失败提示；
+ 研究通过ajax方式提交上传文件请求
+ 添加商品异步刷新分类，解决方案
+
+
+ java开发规范
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

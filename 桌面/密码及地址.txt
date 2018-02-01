@@ -1,0 +1,49 @@
+
+以下简单说明：
+1，双核处理器+2G内存+集成显卡+机械硬盘。性能满足上网、看电影、聊天、办公、玩象棋之类的小游戏；
+2，四核处理器+4G内存+独立显卡+机械硬盘。性能上满足上网、看电影、聊天、办公、做图、玩单机游戏或者网络游戏；
+3，四核处理器+4~8G内存+中高端独立显卡+机械硬盘或者固态硬盘。性能上满足上网、看电影、聊天、办公、做图、玩大型单机游戏或者大型网络游戏，；
+4，六核处理器+8G以上额昵称+高端独立显卡+机械硬盘或者固态硬盘。性能上满足上网、看电影、聊天、办公、做图、玩大型发烧级单机游戏或者大型网络游戏。
+显示屏 dell P21314H，固态硬盘：256G ，内存8G或者16G都行。CPU：Intel(R) Core(TM) i5-7500 CPU @ 3.40GHz
+设置-电池-钉钉-关闭 后台冻结，检测到异常时候自动优化
+localhost:8080/jeecg/con/test.do?testPage
+
+
+优惠券，
+优化后台，
+后台的页面
+
+bug追踪工具 linux
+Apache Bloodhound、Fossil、The Bug Genie以及其他备选产品
+Redmine  linux
+bugfree 和禅道
+
+禅道：admin , Tongchuangkeji123
+lpx lpx123456789
+
+
+
+
+密码总结
+svn://192.168.3.254
+
+外网服务器： 
+47.95.7.195  密码: tckjDevOps     ./tomcat.sh restart    stop   start
+mysql root TongChuangHui2017
+
+内网服务器
+192.168.3.254
+TheMessageOfGod
+
+内网
+car 123456
+ailawu 123456
+market 123456
+
+外网 
+ ailawu  ailawu
+ hongtai hongtai
+ yuzhouyifu yuzhouyifu
+  
+蛋糕 gh_1c38cb7ffa20@app
+汽贸 gh_d08bb5cb2d0b@app

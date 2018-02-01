@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="http://apps.bdimg.com/libs/jquery/1.6.4/jquery.js"></script>
+    <title>test</title>
+    <style>
+        #color-content{
+            width: 400px;
+            height: 400px;
+            overflow: hidden;
+            /* display: none;             */
+        }
+        .color-item{
+            width: 50px;
+            height: 50px;
+            float: left;
+            margin: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="clickShowColor">点我切换</div>
+        <div id="color-content">
+            
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    var color=['Color010','Color020','Color030','Color040','Color050','Color060','Color070','Color080','Color081','Color082','Color090','Color100','Color101','Color102']
+    var colorPage = ['#63b359','#2c9f67','#509fc9','#5885cf','#9062c0','#d09a45','#e4b138','#ee903c','#f08500','#a9d92d','#dd6549','#cc463d','#cf3e36','#5E6671']
+    var colorContent = $("#color-content")
+    $.each(color,function(index){
+        var colorItem = $("<div class = 'color-item'></div>").appendTo(colorContent);
+        $(colorItem).css({'background-color' : colorPage[index]})
+        $(colorItem).attr("color",color[index]);
+    })
+    
+    $('#clickShowColor').click(function(event){
+        $('#color-content').toggle()
+    })
+    $('.color-item').click(function(event){
+        console.log('color-item',event.currentTarget.attributes[1].value)
+        var colorValue = event.currentTarget.attributes[1].value
+    })
+</script>
