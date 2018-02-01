@@ -1,0 +1,120 @@
+ void return;  终止方法，后续不再执行
+
+//-------生成唯一随机串防CSRF攻击
+$state  = md5(uniqid(rand(), TRUE));
+List<Integer> list = new ArrayList<Integer>();
+		list.add(1);
+		list.add(2);
+		list.add(3);
+		Collections.sort(list, new Comparator<Integer>() {
+			public int compare(Integer o1, Integer o2){
+				return (int)(o2 - o1);
+			}
+		});
+		for(int i : list){
+			System.out.println(i);
+		}
+
+List<Integer> list = new ArrayList<Integer>();
+		list.add(1);
+		list.add(2);
+		list.add(3);
+		Collections.sort(list, (o1, o2) -> {
+			return o1 - o2;
+		});
+		for (int i : list) {
+			System.out.println(i);
+		}
+
+	今天把项目放服务器上，才发现这个spring boot框架运行环境是jdk8以上，tom7以上；
+
+         多行文本的保存，数据库使用text类型，进行保存。\
+
+	SQL查询语句顺序: select ... from... where.... group by... having... order by..
+
+
+    /**
+     *
+     * 以form形式 拼接参数
+     * @param $str 参数
+     * @return bool
+     */
+    public static function attachParameter($str){
+            return $str== "" || $str ==null;
+        }
+
+		
+		private static final Logger logger = LoggerFactory.getLogger(SysuserService.class);
+		@Autowired
+		private Tools tools;
+		@Resource(type = MD5.class)
+		private Encipher encipher;
+		@Autowired
+		private DateUtil dateUtil;
+        String uid = tools.createUUID();
+		account.setCreateTime(dateUtil.getFormatDate("yyyyMMddHHmmss"));
+		account.setPassword(encipher.encrypt(password));
+		
+		
+		page = 0 分页数据，如果分页数据量等于limit+1说明还有下一页，否则没有下一页
+		offset(size * page).limit(size + 1)
+		page = 1
+		offset((page-1)*size).limit(size);
+		
+		/*        page=0;   size=10;
+  
+    1:   1__10    page*size+1   --   page*size + size   page=1
+    2:   11__20   page*size+1   --   page*size +size    page=2
+    3:   21 --30  page*size+1   --   page*size + size
+    4:   31---40  page*size+1   --   page*size + size
+     */  
+ 
+	 http://121.42.56.156/   9900   4O9net.com
+	 
+	 
+	 
+//对list进行分页操作就可以了；
+List<PutongDTO> list = gr.getPutong(category);//查出来的list
+List<PutongDTO> result = new ArrayList<PutongDTO>();//新的list
+if(list != null && list.size() > 0){
+	int allCount = list.size();
+	计算总页数的方法
+	int pageCount = (allCount + pageSize-1) / pageSize;
+	if(pageNo >= pageCount){
+		pageNo = pageCount;
+	}
+	int start = (pageNo-1) * pageSize;
+	int end = pageNo * pageSize;
+	if(end >= allCount){
+		end = allCount;
+	}
+	for(int i = start; i < end; i ++){
+		PutongDTO dto = list.get(i);
+		dto.setPageCount(pageCount);//设置总页数
+		result.add(dto);
+	}
+}
+return (result != null && result.size() > 0) ? result : null;
+
+
+计算总页数的方法
+	Integer pageCount = (int) (all / limit);
+		if (all % limit != 0) {
+			pageCount++;
+		}
+		System.out.println(pageCount);
+
+
+
+
+
+
+
+
+   递归--自己调用自己
+     public void getChild(String ID){
+        List nodes=getNodesById(ID);
+        for(i=0i;i<nodes.length;i++){
+            getChild(nodes[i].id);//自己调用自己，递归
+        }
+    }

@@ -1,0 +1,94 @@
+登录
+goods/1493198110622.png#goods/1493198110629.png#goods/1493198110637.png#goods/1493198110642.png 
+  
+方法：POST
+请求url:http://192.168.2.121:8080/ws/accountRe/login
+请求参数：phone，password
+请求参数类型：form
+返回类型：json
+返回示例：  
+ {"status":"0","errorMessage":"success"}
+ 
+
+
+领唱登陆时候：
+
+  获取个人信息
+方法：GET
+请求url:http://192.168.2.121:8080/ws/userInfoRe/getUserinfo
+返回类型：json
+返回示例：  
+ {"status":"0","errorMessage":"success","data":"headPortrait:"头像","username":"昵称"}
+  
+  
+  领唱进入主页 设置当前位置
+请求方式：POST
+请求参数：address(当前城市)
+请求参数类型：json
+请求url:http://192.168.2.121:8080/ws/userInfoRe/leadachorus
+返回类型：json
+返回示例：  
+ {"status":"0","errorMessage":"success","data":[{""}]}
+ 
+ 
+ 
+ 
+ 普通用户登陆的时候
+ 
+  分页查询主唱信息列表
+请求方式：POST
+请求参数：size(每页大小)，page(请求页码)，sex(性别)，region(地区)
+请求参数类型：form
+请求url:http://192.168.2.121:8080/ws/userInfoRe/ordinary
+返回类型：json
+返回示例：  
+ {"status":"0","errorMessage":"success","data":[{""}]}
+ 
+ 
+ 
+ 查询 普通用户信息
+ 请求方式：GET
+请求url:http://192.168.2.121:8080/ws/userInfoRe/queryOrdinaryInfo
+返回类型：json
+返回示例：  
+ {"status":"0","errorMessage":"success","data":"age":"1"headPortrait:"1"introduce:"1"phone:"123456"sex:"1"username:"1"}
+ 
+ 
+ 提交订单
+ 请求方式：POST
+请求参数:"username":"下单人姓名","phone":"下单人手机号","addressDetails":"订单地址","selfEvaluation":"自我评价","receiveUid":"接单人id","price":"price","userTime":"使用时间段"
+请求参数类型：json
+请求url:http://192.168.2.121:8080/ws/order/addOrder
+返回类型：json
+返回示例： {"status":"0","errorMessage":"success"}
+
+ 
+ 
+ 
+ 相同操作
+ 
+ （互相评论）评论订单
+请求方式：POST
+请求参数:"uid":"被评价的用户id","oid":"订单ID","evaluates":"评价内容","hideComment":"是否是匿名评价:1是，2不是","starRating":"星评"
+请求参数类型：json
+请求url:http://192.168.2.121:8080/ws/evaluate/addRemarks
+返回类型：json
+返回示例： {"status":"0","errorMessage":"success"}
+
+
+
+	查询订单
+ 请求方式：POST
+请求参数:"state":"state","size":"size","pageNo":"pageNo"
+请求参数类型：json
+请求url:http://192.168.2.121:8080/ws/order/getOrder
+返回类型：json
+返回示例： {"status":"0","errorMessage":"success",data:"..."}
+
+ 	
+	
+
+ 
+ 
+ 
+ 

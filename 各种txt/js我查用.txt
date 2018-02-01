@@ -1,0 +1,205 @@
+adobe  cc       626418302@qq.com    Ljj123..
+http://www.2cto.com/kf/201504/392530.html
+企鹅客服：
+<a href="tencent://message/?uin=707321921&amp;&amp;Menu=yes">  
+<img style="border:0px;" src=http://wpa.qq.com/pa?p=1:707321921:1></a>  
+后退：href="javascript:history.go(-1)";
+sprin boot 启动失败，无法建立bean, 有可能是创建表的时候关键字的原因；
+http://www.cnblogs.com/pfbk/articles/4848875.html//生成logo的qrcode二维码
+		 
+// input~ 将文件从程序外读进程序中
+// output~ 将程序中的文件写到程序外
+
+
+//点击无反应不做任何操作
+一个#包含了一个位置信息
+默认的锚是#top 也就是网页的上端
+<A HREF="javascript:void(document.form.submit())">单此处提交表单</A>
+<a href="javascript：void(0);" >test</a> 最好不用吧
+<a href="javascript：;" >test</a>  最好用这个
+<a href="####" >test</a> //使用2个到4个#，见的大多是"####"，也有使用"#all"等其他的
+
+
+
+<link rel="shortcut icon" type="image/x-icon" href="img/icoa.ico" media="screen" />  //浏览器小图标
+都是告诉浏览器自动运行这个匿名函数的，因为!+()这些符号的运算符是最高的，所以会先运行它们后面的函数; 
+var hi = function(){ alert("hi") };
+hi();
+等于  (function(){ alert("hi") })();
+!、+和()一样的效果可以把换成   !function(){ alert("hi") }();   !比()节省一个字符，或者说比()好看些
+
+Jquery 代码如下： 
+$(window).load(function (){ 
+       // 编写代码  
+});
+
+等价于 JavaScript 中的以下代码 
+Window.onload = function (){ 
+     // 编写代码 
+}
+
+$(document).ready(function(){
+    //do something...
+});
+            type:"post", 
+            url:"http://localhost:8080/ws/account/login",
+            contentType:"application/x-www-form-urlencoded",
+            dataType:"json", 
+            data:$('form').serialize(),  
+ $(document).ready(function(){})可以简写成$(function(){});
+  location.reload();
+   $("input").not(":last").attr({"disabled":true});//所有的input除了最后一个变不可编辑状态
+   $("input").attr({"disabled":false});//所有的input变为可编辑状态
+   $("#loginNo").attr({"disabled":true});//input变不可编辑状态
+     data:JSON.stringify(data),    	undefined 
+ 
+ C:\Program Files (x86)\JetBrains\PhpStorm 2016.2.1\lib\JetbrainsCrack-2.6.0.jar
+http://idea.lanyus.com/getkey?userName=lan+yu
+userName可以改
+ 生成一个激活码
+复制代码
+菜单 help >>>>Register 
+选择Activation Code 
+将验证码粘贴进去 
+激活...
+if(confirm('您确定删除吗？删除是不可恢复的')){}
+href="javascript:history.go(-1);";
+onclick="checkApply(\''+stock.id+'\',\'1\')"        --转义
+	data:id,
+"{\"status\":"+status+",\"pageNo\":"+page+",\"size\":"+size+"}"
+ http://jetbrains.tencent.click/
+ http://idea.qinxi1992.cn/
+
+ 
+ 在js里面设置样式
+ $('#test').css({color:'red',width:'100px','background-color':'blue',textDecoration:'underline'});
+上面的代码会将id为test的元素的宽度设为100像素，文字颜色红色，背景色蓝色，并带有下划线。
+当属性有连字符“-”时，需要在属性前后加上引号（如"background-color"），或者用驼峰式写法（如textDecoration）。
+
+两种在js里面设置样式的区别
+$("#id").style.display='none'和$("#id").css("display","none");
+.style()是为元素生成样式，.css()是改变元素现有样式
+
+if($("#tab1").is(":visible"))  对于display:none  不可见
+$(":visible")
+$(".show_goods").hide(); 
+$(".show_goods:first").show();
+hide() 方法隐藏被选元素。
+提示：这与 CSS 属性 display:none 类似。
+注释：隐藏的元素不会被完全显示（不再影响页面的布局）。
+<p hidden>这个段落应该被隐藏。</p>
+display:none   block ---不为被隐藏的对象保留其物理空间，即该对象在页面上彻底消失，通俗来说就是看不见也摸不到。
+visible:hidden   visible --- 使对象在网页上不可见，但该对象在网页上所占的空间没有改变，通俗来说就是看不见但摸得到。
+
+
+
+获取option选中的值 
+<select class="agent">
+      <option value="1">省级代理</option>
+      <option value="2">市代</option>
+      <option value="3">县代</option>
+</select>
+  1.  $(".agent").val()
+  2.  $('.agent option:selected').val()
+
+ 
+ 获取单选按钮radio选中的值
+男: <input type="radio" checked="checked" name="sex" value="0" />
+女：<input type="radio" name="sex" value="1" />
+1.   $("input[name='sex']:checked").val()
+2.  $("input:radio:checked").val();
+3.  $("input[type=radio]:checked").val()
+4. $('input[name=category]:checked', '#formId').val()
+
+
+
+checkbox全选或者全不选  
+      
+    $("#all").click(function () {
+      
+        if (this.checked) {
+            // $("tbody:checkbox").prop("checked", true);
+            $("#ddzz input[type=checkbox]").prop("checked",true);
+        } else {
+            $("#ddzz input[type=checkbox]").prop("checked",false);
+            // $("tbody:checkbox").prop("checked", false);
+        }
+    });
+  
+  只允许浏览指定格式的图片
+  <input type="file" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg">
+  <input type="file" name="file" class="element" accept="image/*">  这个会使程序变慢
+  
+   
+  pageAllDiv 动态加载
+  $('#'+pageAllDiv+ " .page").html(sTemp +"   " + sTemp1 );
+  
+  
+  +为兄弟选择器，代表+两侧的元素是前后紧邻的
+  >子元素选择器，表示>之前的元素是后面元素的父级元素
+input:checked+ol:这个是讲当input 拥有了checked后它平级的ol拥有的样式。
+input:checked+ol>li:中的大于是指当input拥有了checked后它平级的ol下面儿子辈的li的样式，孙子辈的不继承
+  
+  
+
+
+先开新的 Tab 访问一下 google.com/ncr ，然后在网页中间的搜索框里随便搜点什么； 
+关闭 Chrome 进程； 
+重新打开 Chrome 并在地址栏里面做一次搜索，这时会提示你选择继续使用 google.com 还是切换到 google.co.jp ，选择即可。
+
+获取input中的value值：text/radio=$(selected_sex).find('input').val();  button=onclick="selectSex(this.value)"  
+
+	     window.history.go(-1);
+
+          //  var time1 = new Date().format("yyyy-MM-dd HH:mm:ss");   
+          //  document.getElementById("time1").innerHTML= new Date().format("yyyy-MM-dd HH:mm:ss");   
+           time1  =  document.write(Date().format("yyyy-MM-dd HH:mm:ss"));
+     
+
+	 
+	 //验证是否有敏感字
+function dataStr(data){
+	var arr = new Array("js","java","javaScript","jquery","html");
+	for(var i=0;i<arr.length;i++){
+		var dataStr = arr[i];
+		if(data.indexOf(dataStr) >= 0){
+			return false;
+		}
+	}
+}
+
+
+支付宝自动提交表单
+<form name="punchout_form" method="post" action="https://openapi.alipay.com/gateway.do?charset=UTF8&method=alipay.trade.wap.pay&sign=E%2F7Np%2BiaXeRlHCtTLvcjgoCAf%2B%2FtLa0QSaAk6zndKQ0pna%2Fhrz%2BbwZRiPrWEFb0sRoUjmAwxX727whw3FY0X27gg98h1yCOOjXdoHQ3HodadPhvcVz%2FpRaUYg%2FD0anhyY77Sa1%2FrfRQOnkK3xvtfCBq%2FsZq5td4BXfgT0lt4qmAvd0Zm%2Ba8HRVYGV2VgQoeMpgGAZdHnl4wgLUAfiDN0sQL%2FjKQtVnCKn9xhGunfjCN6SHAd7TC%2Btf4RrnajwhYCfMVOSBpxaOvrfU93%2FuHEGRb6ZXSm9fpT1%2B3W9kidrtXL4whm2or3V5GCdIN6H1SSqCQ3HwjUvyyrTaBubgieUg%3D%3D&return_url=http%3A%2F%2Fmingmen.youshengtec.net%2Fback%2Freturn_url.jsp&notify_url=http%3A%2F%2Fmingmen.youshengtec.net%2Fback%2Fws%2Fpay%2Fali%2Fcallback&version=1.0&app_id=2017072807929109&sign_type=RSA2&timestamp=2017-08-04+18%3A27%3A19&alipay_sdk=alipay-sdk-java-dynamicVersionNo&format=json">
+<input type="hidden" name="biz_content" value="{&quot;out_trade_no&quot;:&quot;1b3c2713879c429d97123f569dad2911&quot;,&quot;total_amount&quot;:&quot;0.01&quot;,&quot;subject&quot;:&quot;名门互娱-套餐购买&quot;,&quot;seller_id&quot;:&quot;2088721427511147&quot;,&quot;product_code&quot;:&quot;QUICK_WAP_PAY&quot;}">
+<input type="submit" value="立即支付" style="display:none" >
+</form>
+<script>document.forms[0].submit();</script>
+
+
+//mui判断表单是否为空号
+mui("#input_example input").each(function() {
+//若当前input为空，则alert提醒 
+if(!this.value || this.value.trim() == "") {
+    var label = this.previousElementSibling;
+    mui.alert(label.innerText + "不允许为空");
+    check = false;
+    return false;
+}
+}); //校验通过，继续执行业务逻辑 
+if(check){
+    mui.alert('验证通过!')
+}
+
+
+	
+	/* var thisURL = document.URL; 
+	console.log(thisURL);
+	var getval =thisURL.split('&')[1]; 
+	//msg=(getval).split('=')[1];
+	if(getval == "msg=error"){
+		  layer.msg('服务器跑神了，稍后再试吧~', { time: 2000});
+	} */
+
+
+

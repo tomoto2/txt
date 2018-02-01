@@ -1,0 +1,25 @@
+返回前端信息
+
+
+
+{"timeStamp":"1511405224","package":"prepay_id=wx201711231047046e782538080514306015",
+"paySign":"EDC5E2654079D96C0E70C2AFBD9B515F","appId":"wx67a60b9fec620fd5","signType":"MD5","nonceStr":"000000005fe6c581015fe6c582860001"}
+
+
+
+
+
+SYS_ORG_CODE, TIME, TOTAL_FEE, TRADE_TYPE, TRANSACTION_ID, UPDATE_BY, UPDATE_DATE, UPDATE_NAME, ID) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+[2017-11-23 11:32:45] [INFO] [org.jeecgframework.web.cgform.controller.build.WechatController:229] 收到微信支付回调
+[2017-11-23 11:32:45] [INFO] [com.jeecg.common.service.impl.WxPayServiceImpl:1223] 支付结果回调开始
+[2017-11-23 11:32:45] [INFO] [com.jeecg.common.service.impl.WxPayServiceImpl:1233] 微信支付回调xml报文：
+[2017-11-23 11:32:45] [INFO] [com.jeecg.common.service.impl.WxPayServiceImpl:1248] 微信支付状态：SUCCESS
+Hibernate: SELECT * FROM mall_pay_record WHERE out_trade_no = ?
+MiniDao-SQL:
+
+SELECT * FROM mall_pay_record WHERE out_trade_no = :outTradeNo
+[2017-11-23 11:32:45] [INFO] [org.jeecgframework.minidao.aop.MiniDaoHandler:114] MiniDao-SQL:
+
+SELECT * FROM mall_pay_record WHERE out_trade_no = :outTradeNo
+[2017-11-23 11:32:45] [INFO] [com.jeecg.common.service.impl.WxPayServiceImpl:1283] 返回的签名为C91213DB634B653252781C5EA54AE417
+[2017-11-23 11:32:45] [INFO] [com.jeecg.common.service.impl.WxPayServiceImpl:1284] 生成的签名为C91213DB634B653252781C5EA54AE417

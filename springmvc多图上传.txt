@@ -1,0 +1,37 @@
+/**
+	 * 测试多图片上传，ok
+	 * @param request
+	 * @param response
+	 * @param file  
+	 * @throws Exception
+	 */
+	@RequestMapping(params = "testAdd", method = RequestMethod.POST)
+	public void testAdd(HttpServletRequest request, HttpServletResponse response,
+			@RequestParam("picture") MultipartFile[] file) throws Exception {
+		response.setHeader("Content-type", "text/html;charset=UTF-8");  
+		PrintWriter printer=response.getWriter();		
+		Gson gson = new GsonBuilder().create();	
+		TableJson data = new TableJson();
+		  //获得物理路径webapp所在路径
+        String pathRoot = request.getSession().getServletContext().getRealPath("");
+        String path="";
+        List<String> listImagePath=new ArrayList<String>();
+        for (MultipartFile mf : file) {
+            if(!mf.isEmpty()){
+                //生成uuid作为文件名称
+                //获得文件类型（可以判断如果不是图片，禁止上传）
+                String contentType=mf.getContentType();
+                //获得文件后缀名称
+                String imageName=contentType.substring(contentType.indexOf("/")+1);
+                path=Math.random()+"."+imageName;
+                mf.transferTo(new File(pathRoot+path));
+                System.out.println(path);
+                listImagePath.add(path);
+            }
+        }
+        request.setAttribute("imagesPathList", listImagePath);
+        data.setMsg("listImagePath="+listImagePath);
+        printer.print(gson.toJson(data));
+		printer.flush();
+		printer.close();
+	}

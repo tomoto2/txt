@@ -1,0 +1,22 @@
+QueryDSL仅仅是一个通用的查询框架；
+创建QModel，根据生成出来的QModel来查询数据：
+
+QueryDSL只是通用的查询框架，不支持写操作
+查询出来的结果是List，我们不得不做额外的工作将它转化为领域实体
+以上两点也正是统一数据服务层要解决的问题！
+
+jconsole
+autofocus 属性规定在页面加载时，域自动地获得焦点。
+注释：autofocus 属性适用于所有 <input> 标签的类型。
+
+
+熟悉Redis,memcached,了解RESTful API 设计
+熟悉Dubbo Thrift Zookeeper
+
+
+
+
+配置文件;
+local 打包时候会用到
+centos lunix会用到
+本地那个eclipse会用到

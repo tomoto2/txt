@@ -1,0 +1,13 @@
+C:\Windows\System32\drivers\etc替换hosts
+https://raw.githubusercontent.com/racaljk/hosts/master/hosts
+
+
+下载地址：
+https://raw.githubusercontent.com/racaljk/hosts/master/hosts
+
+
+C:\Windows\System32\drivers\etc替换hosts
+
+
+输入http://www.google.com/
+就可以正常访问了

@@ -1,0 +1,349 @@
+ void return;  终止方法，后续不再执行
+
+//-------生成唯一随机串防CSRF攻击
+$state  = md5(uniqid(rand(), TRUE));
+List<Integer> list = new ArrayList<Integer>();
+		list.add(1);
+		list.add(2);
+		list.add(3);
+		Collections.sort(list, new Comparator<Integer>() {
+			public int compare(Integer o1, Integer o2){
+				return (int)(o2 - o1);
+			}
+		});
+		for(int i : list){
+			System.out.println(i);
+		}
+
+List<Integer> list = new ArrayList<Integer>();
+		list.add(1);
+		list.add(2);
+		list.add(3);
+		Collections.sort(list, (o1, o2) -> {
+			return o1 - o2;
+		});
+		for (int i : list) {
+			System.out.println(i);
+		}
+--------------------------------------------------------------------------------------------------	
+	今天把项目放服务器上，才发现这个spring boot框架运行环境是jdk8以上，tom7以上；
+
+         多行文本的保存，数据库使用text类型，进行保存。
+
+	SQL查询语句顺序: select ... from... where.... group by... having... order by..
+
+--------------------------------------------------------------------------------------------------	
+    /**
+     *
+     * 以form形式 拼接参数
+     * @param $str 参数
+     * @return bool
+     */
+    public static function attachParameter($str){
+            return $str== "" || $str ==null;
+        }
+
+		
+		private static final Logger logger = LoggerFactory.getLogger(SysuserService.class);
+		@Autowired
+		private Tools tools;
+		@Resource(type = MD5.class)
+		private Encipher encipher;
+		@Autowired
+		private DateUtil dateUtil;
+        String uid = tools.createUUID();
+		account.setCreateTime(dateUtil.getFormatDate("yyyyMMddHHmmss"));
+		account.setPassword(encipher.encrypt(password));
+		
+--------------------------------------------------------------------------------------------------			
+		page = 0 分页数据，如果分页数据量等于limit+1说明还有下一页，否则没有下一页
+		offset(size * page).limit(size + 1)
+		page = 1
+		offset((page-1)*size).limit(size);
+		
+		/*        page=0;   size=10;
+  
+    1:   1__10    page*size+1   --   page*size + size   page=1
+    2:   11__20   page*size+1   --   page*size +size    page=2
+    3:   21 --30  page*size+1   --   page*size + size
+    4:   31---40  page*size+1   --   page*size + size
+     */  
+ 
+	 http://121.42.56.156/   9900   4O9net.com
+	 
+
+分页sql:
+ SELECT
+	*
+FROM
+	common_card	
+WHERE sys_company_code = :sysCompanyCode
+and sys_org_code = :sysOrgCode
+ORDER BY create_date desc
+limit ${page}, ${size}	
+
+page 从1开始
+String limit = "LIMIT " + (pageNo - 1) * ResourceUtil.PAGE_SIZE + ", " + ResourceUtil.PAGE_SIZE;
+
+	int limitO =( curPage - 1) * pageSize;//起始位置
+			List<MallOrderEntity> lists = marketDao.getPages(limitO,pageSize);
+			limit ${limitO}, ${pageSize}
+		
+LIMIT 接受一个或两个数字参数。参数必须是一个整数常量。如果给定两个参数，第一个参数指定第一个返回记录行的偏移量，第二个参数指定返回记录行的最大数目。初始记录行的偏移量是 0(而不是 1)
+SELECT * FROM table LIMIT 5; //检索前 5 个记录行  。换句话说，LIMIT n 等价于 LIMIT 0,n。
+
+
+SELECT * from user LIMIT 2 OFFSET 1;   比如这个SQL ，limit后面跟的是2条数据，offset后面是从第1条开始读取
+SELECT * from user  LIMIT 2 ,1;   而这个SQL，limit后面是从第2条开始读，读取1条信息。
+
+语句1：select * from student limit 9,4
+语句2：slect * from student limit 4 offset 9
+// 语句1和2均返回表student的第10、11、12、13行  
+//语句1表示从下标为 9（第十行）开始，取4调数据
+//语句2中的4表示返回4行，9表示从表的第十行开始
+
+pagenumber = 1;表示第一页
+语句3：select * from studnet limit (pagenumber-1)*pagesize,pagesize
+语句4：select * from student limit pagesize offset (pagenumber-1)*pagesize
+
+--------------------------------------------------------------------------------------------------	 
+	 
+//对list进行分页操作就可以了；
+List<PutongDTO> list = gr.getPutong(category);//查出来的list
+List<PutongDTO> result = new ArrayList<PutongDTO>();//新的list
+if(list != null && list.size() > 0){
+	int allCount = list.size();
+	计算总页数的方法
+	int pageCount = (allCount + pageSize-1) / pageSize;
+	if(pageNo >= pageCount){
+		pageNo = pageCount;
+	}
+	int start = (pageNo-1) * pageSize;
+	int end = pageNo * pageSize;
+	if(end >= allCount){
+		end = allCount;
+	}
+	for(int i = start; i < end; i ++){
+		PutongDTO dto = list.get(i);
+		dto.setPageCount(pageCount);//设置总页数
+		result.add(dto);
+	}
+}
+return (result != null && result.size() > 0) ? result : null;
+
+
+计算总页数的方法
+	Integer pageCount = (int) (all / limit);
+		if (all % limit != 0) {
+			pageCount++;
+		}
+		System.out.println(pageCount);
+
+-------------------------------------------------------------------------------------------------
+
+map 排序 treemap适合排序，将map放到list里再进行排序，
+list 排序 1.实现Comparator?接口。2.new Comparator
+
+		//按照map中某个值进行排序
+		Map<String, Integer> map = new HashMap<String, Integer>();
+		map.put("a", 1);
+		map.put("b", 2);
+		map.put("c", 3);
+		map.put("c", 5);
+		map.put("d", 4);
+		List<Entry<String,Integer>> list =
+				new ArrayList<Entry<String,Integer>>(map.entrySet());
+		Collections.sort(list, new Comparator<Map.Entry<String, Integer>>() {
+			public int compare(Map.Entry<String, Integer> o1,
+					Map.Entry<String, Integer> o2) {
+				return (o2.getValue() - o1.getValue());
+			}
+		});
+
+		for(Entry<String,Integer> ii :list){
+			System.out.println(ii);
+		}
+	}
+	
+---------------------------------------------------------------------------------------------------	
+
+	
+	//list 排序
+	
+	import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+ 
+class Test implements Comparator {
+    private int num;
+ 
+    public int getNum() {
+        return num;
+    }
+ 
+    public void setNum(int num) {
+        this.num = num;
+    }
+ 
+    public int compare(Object o1, Object o2) {
+        if (((Test) o1).getNum() > ((Test) o2).getNum())
+            return 1;
+        return 0;
+    }
+}
+ 
+class TestExecute {
+    public static void printList(List<Test> list)
+    {
+        for (Test test : list)
+            System.out.print(test.getNum()+" ");
+    }
+    @SuppressWarnings("unchecked")
+    public static void main(String[] args) {
+        List<Test> list = new ArrayList<Test>();
+        for (int i = 10; i > 0; --i) {
+            Test test = new Test();
+            test.setNum(i);
+            list.add(test);
+        }
+ 
+        System.out.println("排序前：");
+        printList(list);
+         
+        Collections.sort(list, new Test());
+         
+        System.out.println("\n排序后：");
+        printList(list);
+         
+    }
+}
+---------------------------------------------------------------------------------------------
+遍历map
+ 
+  //第一种：普遍使用，二次取值
+  System.out.println("通过Map.keySet遍历key和value：");
+  for (String key : map.keySet()) {
+   System.out.println("key= "+ key + " and value= " + map.get(key));
+  }
+  
+  //第二种
+  System.out.println("通过Map.entrySet使用iterator遍历key和value：");
+  Iterator<Map.Entry<String, String>> it = map.entrySet().iterator();
+  while (it.hasNext()) {
+   Map.Entry<String, String> entry = it.next();
+   System.out.println("key= " + entry.getKey() + " and value= " + entry.getValue());
+  }
+  
+  //第三种：推荐，尤其是容量大时
+  System.out.println("通过Map.entrySet遍历key和value");
+  for (Map.Entry<String, String> entry : map.entrySet()) {
+   System.out.println("key= " + entry.getKey() + " and value= " + entry.getValue());
+  }
+
+  //第四种
+  System.out.println("通过Map.values()遍历所有的value，但不能遍历key");
+  for (String v : map.values()) {
+   System.out.println("value= " + v);
+  }
+ }
+
+
+ 
+ -----------------------------------------------------------------------------------------
+
+   递归--自己调用自己
+     public void getChild(String ID){
+        List nodes=getNodesById(ID);
+        for(i=0i;i<nodes.length;i++){
+            getChild(nodes[i].id);//自己调用自己，递归
+        }
+    }
+	 
+ -----------------------------------------------------------------------------------------
+
+	
+	事物：new的东西需要事物，还需要调用保存的方法
+	通过id 查询出来的实体直接set数据，需要事物，不需要调用保存实体的方法。
+	
+	通过注入（@Autowired）调用的话，事物不会传递到下一个方法；
+	通过new调用的话，事物会传递。
+	
+ 
+ -----------------------------------------------------------------------------------------
+
+	
+SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+Date date = sdf.parse("2008-08-08 12:10:12");
+String date = sdf.format(new Date());
+	
+ 
+ -----------------------------------------------------------------------------------------
+引入本地jar
+1. 如果你们公司有自己搭建仓库，可以把SDK里面提供的本地jar上传上去即可
+2. 或者你走你的本地jar依赖方式
+如：
+<dependency>
+    <groupId>*</groupId>
+    <artifactId>*</artifactId>
+    <version>*</version>
+    <systemPath>${project.basedir}/lib/*.jar</systemPath>
+</dependency>
+
+本地的所有maven工程都可以作为一个jar包依赖，引入其他工程中。
+
+ -----------------------------------------------------------------------------------------
+IHttpClientUtil util = new IHttpClientUtil();
+String result = util.executePost(null , null , null);
+
+
+eclipse 撤回关闭的窗口   ctrl + Q
+ 
+-----------------------------------
+LockModeType --- 锁机制
+	public Club getClubByPnum(String pnumId, LockModeType lock) {
+		Club club = selectFrom().where(e.numId.eq(pnumId)).setLockMode(lock).fetchFirst();
+		return club;
+	}
+
+----------------------------------
+ 实体类使用long，支付宝支付使用单位是元，
+	business.setTotal_amount(String.valueOf((double) order.getAmount() / 100));
+ 
+ 
+ 
+	
+	
+	
+	    <!-- 提供对c标签的支持 -->  
+    <dependency>  
+        <groupId>javax.servlet</groupId>  
+        <artifactId>jstl</artifactId>  
+        <version>1.2</version>  
+    </dependency>  
+    <!-- servlet api -->  
+    <dependency>  
+      <groupId>javax.servlet</groupId>  
+      <artifactId>servlet-api</artifactId>  
+      <version>2.5</version>  
+    </dependency>  
+      
+	  
+---------------------------------------------------------------
+    double d1 = 100.0234;
+        double d2 = 12.0652;
+        BigDecimal b1 = new BigDecimal(Double.toString(d1));
+        BigDecimal b2 = new BigDecimal(Double.toString(d2));
+        System.out.println(b1.subtract(b2).doubleValue());
+
+注意BigDecimal的初始化一定要是字符串格式的哦。 
+这样就解决了浮点型精度错乱的问题了。
+	
+	
+	
+	
+	
+	
+	list 安装属性排序
+	http://blog.csdn.net/yinxianluo/article/details/43761425
+	

@@ -1,0 +1,109 @@
+ids for this class must be manually assigned before calling save(): com.joe.frame.core.entity.PlayerRecharge
+----和数据库字段类型不对应导致的，
+
+验证码发送异常org.springframework.data.redis.RedisConnectionFailureException: Cannot get Jedis connection; nested exception is redis.clients.jedis.exceptions.JedisConnectionException: Could not get a resource from the pool----
+-----未开启redis
+
+org.springframework.orm.jpa.JpaSystemException: Null value was assigned to a property [class com.joe.frame.core.entity.User.sex] of primitive type setter of com.joe.frame.core.entity.User.sex; nested exception is org.hibernate.PropertyAccessException: Null value was assigned to a property [class com.joe.frame.core.entity.User.sex] of primitive type setter of com.joe.frame.core.entity.User.sex
+字段为int类型，为基本类型，不能为NULL
+-----解决方法：
+    第一种：数据库字段不设置为空；
+    字段也要改为Integer。同理，long为Long.
+    第三种：在反向工程时使用Java类型，而不是hibernate类型。
+	
+failed to lazily initialize a collection of role: com.joe.frame.core.entity.---懒加载，session关闭之后去查询信息，结果异常
+----这个是懒加载异常,就是在查询时没有加载关联表的对象,你读取这个关联对象的时候,hibernate的session已经关闭,所以无法获取对象。
+--将@ManyToMany(fetch = FetchType.LAZY)改为@ManyToMany(fetch = FetchType.EAGER)，或是修改配置文件web.xml	
+
+注册失败异常信息could not execute statement; nested exception is org.hibernate.exception.GenericJDBCException: could not execute statement
+------语句错误，先注释，一行一行找错误，，最后发现数据库的编码格式不对
+
+----------- 支付宝问题： 统一订单查询接口中，采用的是支付宝的公钥，，不是应用的公钥。----
+service或者Repository在jsp没办法注入的解决办法
+-----解决方案：将jsp页面的回调，改为html页面，直接ajax请求就可以了，查询订单的状态。
+
+
+----------给ID字段加上@GeneratedValue(strategy = GenerationType.AUTO)----要求以三开头的话，那就直接手动在数据里添加一个记录id=300000
+
+double类型在数据库存储时候格式会变的问题
+	-----解决方案：将double换成long类型，数据库以分为单位；
+	
+
+修改获取下级，根据邀请码获取下级
+---------------会内存溢出,inviteCode ----toString 去掉就可以了，为什么啊
+
+
+***********agentServicve 生成订单信息里的addRecharge， 过时时间设置
+
+注册失败
+---------------- 更改数据库中的parent_pid，ucid;改成32位的，数据库因为运行其他项目，使用同一个表，导致长度改变；
+
+
+------------------微信支付中，openid和商户号这些配置信息，都需要对应；还有商户秘钥，也就是商户key；32位，需要配置。一些证书之类的东西，需要放到服务器tomcat的根目录ROOT下面；
+-----------------微信支付中，一闪而过。公众号支付，
+                    支付授权目录，写到页面的前一级目录；例如 http://mingmen.mingmenhuyu.com/back/wechatpay.html/    写成，http://mingmen.mingmenhuyu.com/back
+根据微信公众号配置修改，微信公众号的配置位置在：登录微信公众号-设置-公众号设置-功能设置-网页授权域名  10003 redirect_uri与后台配置不一致；
+
+					
+	-----获取用户信息时候---网页授权域名设置---mingmenhuyu.com，设置成顶级域名，这样该域名下的所有域名（二级域名都可以接受到回调请求）mingmen.mingmenhuyu.com、www.mingmenhuyu.com、mail.mingmenhuyu.com
+
+
+-------------------------------给玩家充值，若此玩家是本俱乐部成员可以充值，若未加入过任何俱乐部可以充值；若加入别的俱乐部了不可以充值；
+
+-------------------查询数据太慢了，建立索引，添加缓存；
+
+--------------------------------linux清空redis，redis-cli   ，  flushall 
+------------------------只有id才嫩设置成自增
+----服务器缓存清空，no bean specied
+
+-----若在其他的repository里调用另外的repository实体，查询时候，不能使用selectFrom(),必须使用select().from();
+
+
+----tomcat启动失败，Spring中常见的bean创建异常，导包错误，或者repository的包导的错误
+
+-----------QEntity 自动生成出错，解决：进入项目本地路径，使用mvn clean，mvn compile，清理，编译一下。
+
+
+-----------微信支付：下单账号与支付账号不一致，请核对后再支付，，，情况导致无法支付的，清除openid重新获取就可以了。
+
+
+------- private static final String GRANTURL = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=%s&secret=%s&code=%s&grant_type=authorization_code";
+------------%s,替换匹配 --------  String granturl = String.format(GRANTURL, wxProp.getAppid(), wxProp.getSecret(), code);  logger.debug("授权URL为：{}", granturl);
+
+
+错误: 找不到或无法加载主类------------------重新编译项目
+
+------------------提交代码到git失败，error: failed to push some refs to 'git@github.com:yangchao0718/cocos2d.git -先pull后push，保持同步更新
+-------提交代码到git失败cannot open git-upload-pack问题,打开eclipse中的windows-->Preferences-->Team-->Git-->Configuration-->User Settings.然后点Add Entry新建一个键值对，输入http.sslVerify=false。
+
+
+--------提价服务器代码不更新，我索性把整个工程重新打包war,但是并不用这样，用java反编译软件（jd-gui）测试一下服务器是不是最新的即可，
+
+-----下单账号与支付账号不一致 请核实后;微信支付使用了同一个opneid,每次都需要重新获取opneid的，不保存数据库。不然第一次登录将opneid添加到数据库后续不再获取，肯定使用的是同一个opneid；
+
+--------微信获取access——token时候，需要添加基本配置白名单，为公网ip地址，ip.qq.com，若添加多个的话，用换行来分割
+
+
+file:///D:\repos
+
+
+SupportService--addWechatInfo
+
+
+.以debug模式启动Tomcat
+
+(1).进入tomcat的bin目录，输入./catalina.sh jpda run或者./catalina.sh jpda start命令启动tomcat
+
+
+
+mingmen.mingmenhuyu.com
+
+
+
+
+
+
+
+
+
+	

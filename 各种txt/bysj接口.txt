@@ -1,0 +1,304 @@
+所有的分页  页数都是从开始的；
+所以参数请求格式：form，若为其他则有标明；
+(3)快捷键：
+
+ea:
+Ctrl+Shift+F9：设置属性
+Ctrl+Shift+F10：设置方法
+
+UserInfoParam 和UserInfo 中的identity的意义
+ * 管理员 ，接单员，维修员， 仓库管理员 ，加盟商,  客户
+ *  0         2       3          4         1        5
+ 
+ 公共
+ 获取个人信息
+方法：GET
+请求url:http://localhost:8080/ws/userinfo/getUserMsg
+请求参数：无
+返回类型：json
+返回示例：  
+ {"status":"0","errorMessage":"success","data":BaseUser}
+ 
+ 
+ 
+ 明天 ：修改密码，提交申请，获取列表
+ 
+ 
+ 
+ 管理员操作 开始：
+  
+  
+   管理员添加加盟商
+方法：POST
+请求url:http://localhost:8080/ws/admin/addAdd
+请求参数：UserInfoParam 
+返回类型：json
+返回示例：   
+ {"status":"0","errorMessage":"success"}
+
+ 
+ 
+ 管理员或者加盟商自己 修改加盟商信息
+方法：POST
+请求url:http://localhost:8080/ws/admin/uptAdd
+请求参数：UserInfoParam 
+返回类型：json
+返回示例：   
+ {"status":"0","errorMessage":"success"}
+
+ 
+  管理员删除加盟商信息
+方法：POST
+请求url:http://localhost:8080/ws/admin/delAdd
+请求参数： id 参数
+返回类型：json
+返回示例：   
+ {"status":"0","errorMessage":"success"}
+
+ 
+
+ 管理员查看加盟商信息列表
+ 
+
+方法：POST
+请求url:http://localhost:8080/ws/admin/getStaffList
+请求参数：PageParam
+参数请求示例：{"size":"10","pageNo":"1"};	 
+返回类型：json
+返回示例：  
+ {"status":"0","errorMessage":"success","data":[{UserInfo}]}
+ 
+ 
+ 
+ 
+ 
+  ------------------------加盟商操作 开始：
+  
+获取系统日志 分页查询   page从1开始
+方法：POST
+请求url:http://localhost:8080/ws/join/getAllLogs
+请求参数：PageParam
+参数请求示例：{"size":"10","pageNo":"1"};	 
+返回类型：json
+返回示例：  
+ {"status":"0","errorMessage":"success","data":[{Logs}]}
+ 
+ 
+ 
+ 
+加盟商查看  系统工作人员基本信息
+方法：POST
+请求url:http://localhost:8080/ws/join/getStaffList
+请求参数：StaffParam	 
+返回类型：jsonhttp://localhost:8080/ws/admin/getAllLogs
+返回示例：  
+ {"status":"0","errorMessage":"success","data":[{UserInfo}]}
+ 
+ 
+查看维修列表 
+方法：POST
+请求url:http://localhost:8080/ws/join/getRepairList
+请求参数：PageParam
+参数请求示例：{"size":"10","pageNo":"1"};	 
+返回类型：json
+返回示例：  
+ {"status":"0","errorMessage":"success","data":[{RepairDTO}]}
+ 
+ 
+ 
+ 按照年份 按照月份  按地区 统计维修单子
+方法：POST
+请求url:http://localhost:8080/ws/join/getRepairByType
+请求参数：RepairTypeParam 
+返回类型：json
+返回示例：  
+ {"status":"0","errorMessage":"success","data":[{RepairDTO}]}
+ 
+ 
+获取加盟商个人信息
+方法：GET
+请求url:http://localhost:8080/ws/join/getUserBusiness
+请求参数：无
+返回类型：json
+返回示例：  
+ {"status":"0","errorMessage":"success","data":UserInfo}
+ 
+ 
+  添加各种账户  分配默认权限
+  方法：POST
+请求url:http://localhost:8080/ws/join/addAccount
+请求参数：UserInfoParam
+返回类型：json
+返回示例：  
+ {"status":"0","errorMessage":"success"}
+ 
+ 
+ 
+ 查询不同故障的数目  用于统计报表
+方法：GET
+请求url:http://localhost:8080/ws/join/getBaobiaoByGuzhang
+返回类型：json
+返回示例：  
+ {"status":"0","errorMessage":"success","data":[{BaobiaoDTO}]}
+   
+  
+  
+  
+  
+  ----------------------主要是客户的操作
+  
+  
+  注册
+  
+ 方法：POST
+请求url:http://localhost:8080/ws/customer/register
+请求参数：CustomerParam
+返回类型：json
+返回示例：  
+ {"status":"0","errorMessage":"success"}
+ 
+ 
+  客户修改资料
+ 方法：POST
+请求url:http://localhost:8080/ws/customer/UptData
+请求参数：CustomerParam
+返回类型：json
+返回示例：  
+ {"status":"0","errorMessage":"success"}
+ 
+ 
+ 客户提交订单
+ 方法：POST
+请求url:http://localhost:8080/ws/customer/addOrder
+请求参数：OrderParam
+返回类型：json
+返回示例：  
+ {"status":"0","errorMessage":"success"}
+ 
+ 
+ 
+ 
+  客户修改订单信息
+ 方法：POST
+请求url:http://localhost:8080/ws/customer/uptOrder
+请求参数：OrderParam
+返回类型：json
+返回示例：  
+ {"status":"0","errorMessage":"success"}
+ 
+ 
+ 
+  查询自己所有订单列表
+ 方法：POST
+请求url:http://localhost:8080/ws/customer/getOrderList
+请求参数：PageParam
+返回类型：json
+返回示例：  
+ {"status":"0","errorMessage":"success","data":[{Orders}]}
+ 
+ 
+ 
+ 查询某个订单的详情  （审核状态...）
+ 方法：POST
+请求url:http://localhost:8080/ws/customer/getOneOrder
+请求参数：oid
+返回类型：json
+返回示例：  
+ {"status":"0","errorMessage":"success","data":[{Orders}]}
+ 
+ 
+ 
+  ---------------------接单人员操作
+ 
+ 
+ 审核单子//添加物流单号
+ 方法：POST
+请求url:http://localhost:8080/ws/receive/verifyOrder
+请求参数：AcceptParam
+返回类型：json
+返回示例：  
+ {"status":"0","errorMessage":"success"}
+ 
+ 
+ 
+ 查询维修列表及状态
+ 方法：POST
+请求url:http://localhost:8080/ws/receive/getRepairStateList
+请求参数：PageParam
+返回类型：json
+返回示例：  
+ {"status":"0","errorMessage":"success","data":[{Repair}]}
+ 
+ 
+ 
+ 查询单个维修状态 
+ 方法：POST
+请求url:http://localhost:8080/ws/receive/getOneOrder
+请求参数：pid （维修单子的id）
+返回类型：json
+返回示例：  
+ {"status":"0","errorMessage":"success","data":Repair}
+ 
+ 
+ 
+ 
+ 	           --------------维修师操作-------------
+			   
+			   
+ 
+  更新维修状态
+ 方法：POST
+请求url:http://localhost:8080/ws/receive/uptRepair
+请求参数：RepairParam
+返回类型：json
+返回示例：  
+ {"status":"0","errorMessage":"success"}
+ 
+ 
+ 
+ 申请维修配件或者工具
+ 方法：POST
+请求url:http://localhost:8080/ws/receive/PartsApplyParam
+请求参数：PartsApplyParam
+返回类型：json
+返回示例：  
+ {"status":"0","errorMessage":"success"}
+ 
+ 
+ 
+ 获取自己的所有配件/工具审核列表
+ 方法：POST
+请求url:http://localhost:8080/ws/receive/getStocks
+请求参数：applyStatus ，PageParam
+返回类型：json
+返回示例：  
+ {"status":"0","errorMessage":"success","data":[{PartsApply}]}
+ 
+ 
+ 
+ 
+ ------------------------仓库管理员-----------
+ 
+ 审核仓库申请 (修改审核状态 减去相应配件数量信息 添加备注)
+ 方法：POST
+请求url:http://localhost:8080/ws/stock/checkStock
+请求参数：PartsApplyParam
+返回类型：json
+返回示例：  
+ {"status":"0","errorMessage":"success"}
+ 
+ 
+  获取所有配件/工具审核列表
+ 方法：POST
+请求url:http://localhost:8080/ws/stock/getStockList
+请求参数：applyStatus ，PageParam
+返回类型：json
+返回示例：  
+ {"status":"0","errorMessage":"success","data":[{PartsApplyParam}]}
+ 
+ 
+ 
+ 
+ 
+ 
+ 

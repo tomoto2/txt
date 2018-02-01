@@ -1,0 +1,56 @@
+熟练 java spring、struts、mysql、maven、mybatis、rest等技术；
+1.对spinp、struct、mybaits有详细了解；
+2.能够对mysql表建立合适的索引；写多表查询；order by、having、having not、limit分页；
+3.linux的删除文件，查看文件，编辑文件；
+4.能够根据概要写出某功能的详细设计
+有责任心；学习能力强；
+擅长openfire的优先录取；
+
+ssm,mysql,jquery；javascript；
+数据库一级二级缓存；redisdubbo；zookeeper；maven；nginx；
+
+（1）子页面调用父页面的方法或者变量：
+
+window.parent.方法()或者变量名
+window.parent相当于定位到父页面  之后的操作和在父页面中写代码一样写
+window.parent.aa();//调取aa函数
+window.parent.bb;//调取bb变量
+
+例如：想在子页面中得到id为aaa的文本框的值
+window.parent.$("#aaa").val();//这种写法的前提是引用了jquery 
+window.parent.getElementById("aaa").value; //js的写法
+
+（2）父页面调取子页面
+
+主要是通过contentWindow定位到子页面
+document.getElementById("childframe").contentWindow.childtest();
+//调取子页面中的childtest方法   js的写法
+
+var childWindow = $("#addFrame")[0].contentWindow;//获取子窗体中的对象
+childWindow.formSubmit();//调取子页面的formSubmit方法  jquery的写法
+//注释：其中 childframe和addFrame 都时iframe的id
+
+
+spring配置文件中，
+返回json格式时候spring怎么配置注解
+	<!-- 使用annotation 自动注册bean -->
+	<context:component-scan base-package="com.fhan.dream.controller">
+	</context:component-scan>
+	springmvc配置文件：
+	
+		<!-- 使用annotation 自动注册bean -->
+	<context:annotation-config></context:annotation-config>
+	<context:component-scan base-package="com.fhan.dream,spring,xx.test,cn.org.cma.activemq">
+		<!-- 配置过滤器，注意过滤路径是从上面配置的基本路径开始的-->
+		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+	</context:component-scan>
+	
+	<!-- 定义spring的aop支持  强制spring 使用CGLIB来生成AOP代理类-->
+	<aop:aspectj-autoproxy proxy-target-class="true"></aop:aspectj-autoproxy>
+	
+	
+	
+
+要求：
+2、熟悉J2EE体系结构，springMVC框架（了解SSH框架），熟练掌握JSP、servlet、XML、Ajax、HTML、js、CSS，具有一年以上开发经验，熟悉HTML5开发者优先。 
+3、熟悉Oracle，My SQL等主流数据库开发，精通Sql语言。 

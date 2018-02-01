@@ -1,0 +1,92 @@
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script> 
+ 普通用户的星级；
+ 领唱的星级；
+ 订单完成之后；进行星级评价，留言
+ 领唱 ： 单子 
+   进行中
+   带评价
+   已评价  
+ 普通用户 星级为总评价的平均数
+  领唱 
+  	logger.info("转账历史：{}", list);
+  
+  
+ http://www.haorooms.com/post/css_div_juzhong   css设置水平垂直居中；
+一、水平居中  
+    .hor_center {    
+            margin: 0 auto;    
+    }    
+  
+  
+二、水平垂直居中  
+  
+<div class="content"></div>  
+  
+    .content {    
+          width: 360px;    
+          height: 240px;    
+    }    
+    .ver_hor_center {    
+          position: absolute;    
+          top: 50%;    
+          left: 50%;    
+          margin-left: -180px; /*要居中的div的宽度的一半*/    
+          margin-top: -120px; /*要居中的div的高度的一半*/    
+    }    
+  
+  
+三、div置于底部(footer)  
+  
+    .bottom_footer {    
+           position: fixed; /*or前面的是absolute就可以用*/    
+           bottom: 0px;    
+    }    
+
+
+
+input去掉默认样式
+ input{  
+   background:none;  
+   outline:none;  
+   border:0px;  
+    border-bottom: solid 1px darkgray;
+    background: rgba(0, 0, 0, 0);
+}  
+ 
+ 
+ rgba用法
+     background-color: #e4d1d1;
+    /* opacity: 1.5; */
+    background-color: rgba(245, 236, 236, 0.5);
+    /* box-shadow: 2px 2px 1px #ecd6d6; */
+
+	
+
+<a  class="buyao"   href="tencent://message/?uin=707321921&amp;&amp;Menu=yes">  
+<img style="border:0px;" src=http://wpa.qq.com/pa?p=1:707321921:1></a>  
+
+需要有一个扣扣号开通“QQ在线状态”服务，这样才能使用，
+你参考这个网站填一下设置
+
+ http://jingyan.baidu.com/article/b24f6c823425a586bfe5da1f.html
+ 
+ 
+ 
+
+
+
+
+li 最后一个元素不选中
+.listItem li:not(:last-child) {
+border-bottom:1px solid green; 
+}
+
+header 头部的背景不全屏的设置，background-size:auto;  / background:#eeeeee url(img/tbg@2x.png) no-repeat fixed top
+
+
+   <div class="pull-left" style="width: 90%;margin-left: 5%">配送方式：<span class="pull-right">快递：免邮</span></div>
+   <div class="left">配送方式：</div><div class="right">快递：免邮</div>
+
+
+   z-index的用法：谁的值大，谁就遮住谁；
+    根据name获取值：$("input[name='sex']").val(selected_sex);

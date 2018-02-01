@@ -1,0 +1,52 @@
+//-------生成唯一随机串防CSRF攻击
+$state  = md5(uniqid(rand(), TRUE));
+List<Integer> list = new ArrayList<Integer>();
+		list.add(1);
+		list.add(2);
+		list.add(3);
+		Collections.sort(list, new Comparator<Integer>() {
+			public int compare(Integer o1, Integer o2){
+				return (int)(o2 - o1);
+			}
+		});
+		for(int i : list){
+			System.out.println(i);
+		}
+
+
+
+List<Integer> list = new ArrayList<Integer>();
+		list.add(1);
+		list.add(2);
+		list.add(3);
+		Collections.sort(list, (o1, o2) -> {
+			return o1 - o2;
+		});
+		for (int i : list) {
+			System.out.println(i);
+		}
+
+
+
+    /**
+     *
+     * 以form形式 拼接参数
+     * @param $str 参数
+     * @return bool
+     */
+    public static function attachParameter($str){
+            return $str== "" || $str ==null;
+        }
+
+
+		
+		/*        page=0;   size=10;
+  
+    1:   1__10    page*size+1   --   page*size + size   page=1
+    2:   11__20   page*size+1   --   page*size +size    page=2
+    3:   21 --30  page*size+1   --   page*size + size
+    4:   31---40  page*size+1   --   page*size + size
+     */  
+
+	 
+	 http://121.42.56.156/   9900   4O9net.com

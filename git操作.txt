@@ -1,0 +1,27 @@
+1. 先在github上面创建一个repository----题目为：用户名.github.io  我的tomoto2.github.io
+2. 在本地选择一个git的工作区，右键git bash here，
+执行 : git clone https://github.com/tomoto2/tomoto2.github.io.git
+出现一个.git即为成功.
+3. 在本地编写任意的网页，例如index.html,更新到github上去，执行
+git add .
+git commit -m "更新index.html，编写测试"
+git push
+输入用户名密码
+总结：注意首先命令行进入你的tomoto2.github.io这个目录，然后依次执行git add . , git commit -m "注释"，git push，然后输入你的用户名，密码即可。
+
+4. 访问时候，默认的地址是: http://tomoto2.github.io
+如果后面有文件夹什么的，请记得在路径上加上哦
+
+
+5.如果在github上面更新了，文件，同步到本地的话，直命令:git pull
+
+二 。 使用eclipse提交工程到git，请参照youcheng
+
+
+
+
+2017.09.05【李鹏新】
+核心任务（1个）：管理服务器redis
+主要任务（2个）：学习redis，监控后台数据计算准确性
+
+touch /var/lock/subsys/local

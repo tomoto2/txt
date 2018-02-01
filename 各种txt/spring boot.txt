@@ -1,0 +1,24 @@
+解决QUser
+
+maven项目
+eclipse商店 搜索apt  安装即可
+
+在eclipse.ini中添加
+openFile
+-vm
+C:\Program Files\Java\jdk1.8.0_111\bin\javaw.exe
+
+
+
+使用@Data注解
+使用getset
+lombok.jar 右键java运行，选择eclipse的安装位置；
+
+
+
+有时候tomcat启动失败，打开tomcat的目录log中看下日志信息；
+如把所有项目都删除了。还是一闪而过，打开server.xml看下host，
+将content里面的内容删除，之前部署的任务自动生成的配置删掉
+
+
+数据库中字段不能为null，或者数据库中多了字段

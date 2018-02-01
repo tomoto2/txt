@@ -1,0 +1,63 @@
+insert into rj_stu (学号,姓名,性别,年级,院系名称,专业名称,学制,班级名称,出生日期,民族,毕业学校) values ('s','ss','s','',s'', 's','s','s','s','s' ,'s')
+
+select * from user WHERE username='1' and password='1'
+
+update rj_stu set 密码='123'
+
+select * from rj_stu WHERE 学号='201370034205' and 密码='123'
+
+select 密码 from rj_stu WHERE 学号='201370034205' 
+
+select * from rj_stu  WHERE 班级名称='RB软工金132'
+
+insert into teacher values('张明','10','教学部',2011-9-8,'汉族','女','10')
+
+select  * from rj_stu order by 学号 desc 
+
+SELECT * FROM rj_stu LIMIT 2,10
+
+select * from teacher group by 编号
+
+delete from teacher where 编号 in (select * from (select max(编号) 
+from teacher group by 编号 having count(编号) > 1) as b);
+
+CREATE TABLE `user` (
+  `uid` mediumint(8) unsigned NOT NULL auto_increment,
+  `username` char(15) NOT NULL default '',
+  `password` char(32) NOT NULL default '',
+  `email` varchar(40) NOT NULL default '',
+  `regdate` int(10) unsigned NOT NULL default '0',
+  PRIMARY KEY  (`uid`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+select uid from user where username='username' and password='password' limit 1
+
+
+select * from rj_table LIMIT 2,10
+
+
+
+
+
+select * from rj_table，rj_id where 学号 = '201370034205' and 周几='3'
+
+insert into  rj_id (身份证号) VALUES ('455') where  (select *  from rj_table where 学号 = '201370034206')
+
+select * from rj_table rt JOIN  rj_id ri on rt.学号 = ri.学号 where ri.身份证号='2924'
+
+select * from rj_table,rj_id where rj_table.学号=rj_id.学号 and 周几='2'
+
+insert into  rj_id (学号) select  distinct  学号  from rj_table 
+delete from rj_id
+select count(*) from rj_id where 身份证号='oiYYCj3JBAYF_ekkLpcCDIlzyYSc'
+select * from rj_id where 学号='201370034205'
+select * from user
+
+select * from rj_table,rj_id where rj_table.学号=rj_id.学号 and rj_id.身份证号='oiYYCj3JBAYF_ekkLpcCDIlzyYSc' and rj_table.周几='2'
+
+select * from rj_stu where 姓名 like '' or 学号 like '' or 班级名称 like 'RB软工金132'
+
+select * from rj_stu
+
+select * from rj_stu LIMIT 1,2
+
+select * from geuser where gename=01 and gepassword=01

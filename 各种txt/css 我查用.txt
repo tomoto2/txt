@@ -1,0 +1,122 @@
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script> 
+ http://www.haorooms.com/post/css_div_juzhong   css设置水平垂直居中；
+一、水平居中  
+    .hor_center {    
+            margin: 0 auto;    
+    }    
+  
+  
+二、水平垂直居中  
+  
+<div class="content"></div>  
+  
+    .content {    
+          width: 360px;    
+          height: 240px;    
+    }    
+    .ver_hor_center {    
+          position: absolute;    
+          top: 50%;    
+          left: 50%;    
+          margin-left: -180px; /*要居中的div的宽度的一半*/    
+          margin-top: -120px; /*要居中的div的高度的一半*/    
+    }    
+  
+  
+三、div置于底部(footer)  
+  
+    .bottom_footer {    
+           position: fixed; /*or前面的是absolute就可以用*/    
+           bottom: 0px;    
+    }    
+
+
+
+input去掉默认样式
+ input{  
+   background:none;  
+   outline:none;  
+   border:0px;  
+    border-bottom: solid 1px darkgray;
+    background: rgba(0, 0, 0, 0);
+}  
+ 
+ 
+ rgba用法
+     background-color: #e4d1d1;
+    /* opacity: 1.5; */
+    background-color: rgba(245, 236, 236, 0.5);
+    /* box-shadow: 2px 2px 1px #ecd6d6; */
+
+	
+
+<a  class="buyao"   href="tencent://message/?uin=707321921&amp;&amp;Menu=yes">  
+<img style="border:0px;" src=http://wpa.qq.com/pa?p=1:707321921:1></a>  
+
+需要有一个扣扣号开通“QQ在线状态”服务，这样才能使用，
+你参考这个网站填一下设置
+
+ http://jingyan.baidu.com/article/b24f6c823425a586bfe5da1f.html
+ 
+ 
+ 
+
+
+
+
+li 最后一个元素不选中
+.listItem li:not(:last-child) {
+border-bottom:1px solid green; 
+}
+
+header 头部的背景不全屏的设置，background-size:auto;  / background:#eeeeee url(img/tbg@2x.png) no-repeat fixed top
+
+
+   <div class="pull-left" style="width: 90%;margin-left: 5%">配送方式：<span class="pull-right">快递：免邮</span></div>
+   <div class="left">配送方式：</div><div class="right">快递：免邮</div>
+
+
+   z-index的用法：谁的值大，谁就遮住谁；
+   根据name获取值：$("input[name='sex']").val(selected_sex);
+   
+   
+   
+   
+   
+   
+   
+   
+   
+选择test1下的    figcaption 中 第一个p
+<figure class="test1">
+        <img src="img/dengfuru3.jpg" class="test1-img">
+        <figcaption>
+            <h2><font color="white">邓福如</font></h2>
+            <p>《如果有如果》</p>
+            <p>《前面路口停》</p>
+            <p>《邓大福是一只猫》</p>
+            <p>《Nothing On You》</p>
+        </figcaption>
+    </figure>
+
+   /*为了实现逐个出现的效果，就要单独给每一个p标签加上延时,给第二个p标签加延时*/
+.test1 figcaption p:nth-of-type(2){
+    transition-delay: 0.10s;/*当鼠标放在图片上0.10秒以后开始向右移动进入页面*/
+}
+
+
+
+---------------------table
+样式
+table, th , td  {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd)	{
+  background-color: #f1f1f1;
+}
+table tr:nth-child(even) {
+  background-color: #ffffff;
+}
+

@@ -1,0 +1,217 @@
+
+wget 类似于迅雷，是一种下载工具，
+通过HTTP、HTTPS、FTP三个最常见的TCP/IP协议下载，并可以使用HTTP代理名字是World Wide Web”与“get”的结合。
+ 
+yum: 是redhat, centos 系统下的软件安装方式，基于Linux，
+         全称为 Yellow dog Updater, Modified，
+         是一个在Fedora和RedHat以及CentOS中的Shell前端软件包管理器
+         基于RPM包管理，能够从指定的服务器自动下载RPM包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软件包。
+ 
+rpm:  软件管理;   redhat的软件格式 rpm     r=redhat  p=package   m=management
+             用于安装 卸载 .rpm软件
+ 
+ 
+串联下：
+   使用wget下载一个 rpm包, 然后用 rpm -ivh  xxx.rpm  安装这个软件，嫌麻烦的话，就
+   可以直接用  yum  install  sqoop   来自动下载和安装依赖的rpm软件。
+ 
+ 
+ap-get是ubuntu下的一个软件安装方式，它是基于debain。
+
+
+查看系统的位数
+    getconf LONG_BIT
+    arch
+
+可显示电脑以及操作系统的相关信息。 
+    uname -a 
+
+说明正在运行的内核版本
+    cat /proc/version
+
+=============================== 文件操作 ========================================
+创建文件夹  ------mkdir 
+创建文件    ------touch  
+删除        ------rm -rf test/
+该文件夹名  -----mv 改前名  改后名 
+移动文件    -----mv [选项] 源文件或目录 目标文件或目录
+
+
+=============================== 权限操作 ========================================
+切换用户
+   su
+修改 权限
+    "0"表示没有权限、“1”表示可执行权限、“2”表示可写权限、“4”表示可读权限。
+    
+    chmod 755 test.sh
+
+    linux给文件或目录赋权限还有一种容易理解方法。比如：“chmod a-x”表示所有用户对此文件或目录将没有执行权限。
+    “a”表示所有用户，“u”表示创建者、“g”表示创建者同组用户、“o”表示其他用户；“+”表示添加权限，“-”表示取消权限；“r”表示读权限、“w”表示写权限、“x”表示写权限。
+
+===============================端口号========================================
+查看 端口号
+     netstat –apn
+     netstat -tunlp
+     netstat -tunlp | grep 80
+
+
+    命令格式：netstat [选项]
+	常用参数：
+	-a, --all 显示所有正在或不在侦听的套接字。
+	-p, --program 显示套接字所属进程的PID和名称。
+	-n, --numeric 显示数字形式地址而不是去解析主机、端口或用户名。
+
+===============================防火墙========================================
+Linux下查看、关闭及开启防火墙命令
+    1)永久性生效，重启后不会复原 
+    开启： chkconfig iptables on 关闭： chkconfig iptables off 
+    2)即时生效，重启后复原 
+    开启： service iptables start 关闭： service iptables stop 
+
+    需要说明的是对于Linux下的其它服务都可以用以上命令执行开启和关闭操作。 
+    在开启了防火墙时，做如下设置，开启相关端口， 修改/etc/sysconfig/iptables 文件，添加以下内容： 
+    -A RH-Firewall-1-INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT 
+    -A RH-Firewall-1-INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT
+    3)查看防火墙状态
+    chkconfig iptables --list
+
+
+5.查看当前规则---防火墙
+    iptables -L -n
+
+    iptables -L -n  --line-number
+
+    iptables -D INPUT 3
+
+===============================CentOS 7.0========================================
+CentOS 7.0默认使用的是firewall作为防火墙，这里改为iptables防火墙。
+firewall：
+    systemctl start firewalld.service#启动firewall
+    systemctl stop firewalld.service#停止firewall
+    systemctl disable firewalld.service#禁止firewall开机启动
+
+    systemctl restart iptables.service #重启防火墙使配置生效
+    systemctl enable iptables.service #设置防火墙开机启动
+
+
+CentOS 7.0 -------修改防火墙
+    systemctl stop firewalld.service             #停止firewall
+    systemctl disable firewalld.service        #禁止firewall开机启动
+ 
+    >>> 开启端口
+	firewall-cmd --zone=public --add-port=80/tcp --permanent
+    命令含义：
+	--zone #作用域
+	--add-port=80/tcp #添加端口，格式为：端口/通讯协议
+	--permanent #永久生效，没有此参数重启后失效
+    >>> 重启防火墙
+	firewall-cmd --reload
+
+===============================  JDK  ========================================
+查看 jdk的版本
+   rpm -qa|grep jdk 
+   卸载
+	yum -y remove java-1.4.2-gcj-compat-1.4.2.0-40jpp.115
+	rpm -e –nodeps java-1.4.2-gcj-compat-1.4.2.0-40jpp.115 
+
+安装 jdk时 出现
+	bash: /home/xzc/java/jdk1.8.0_111/bin/java: /lib/ld-linux.so.2: bad ELF interpreter: No such file or
+    用sudo yum install glibc.i686
+
+===============================  svn  ========================================
+查找所有svn启动的进程
+    ps -aux | grep 'svn'
+
+查看svn安装在哪里
+    whereis 
+
+卸载 svn
+    rpm -e   subversion
+    当然也可以强制卸载，在上面的命令后面加上参数： --nodeps
+
+anon-access  控制非鉴权用户访问版本库的权限。取值范围为"write"、"read"和"none"。
+          即"write"为可读可写，"read"为只读，"none"表示无访问权限。
+          缺省值：read
+
+auth-access  控制鉴权用户访问版本库的权限。取值范围为"write"、"read"和"none"。
+          即"write"为可读可写，"read"为只读，"none"表示无访问权限。
+          缺省值：write
+
+password-db  指定用户名口令文件名。除非指定绝对路径，否则文件位置为相对conf
+          目录的相对路径。
+          缺省值：passwd
+
+authz-db    指定权限配置文件名，通过该文件可以实现以路径为基础的访问控制。
+          除非指定绝对路径，否则文件位置为相对conf目录的相对路径。
+          缺省值：authz
+
+realm       指定版本库的认证域，即在登录时提示的认证域名称。若两个版本库的
+          认证域相同，建议使用相同的用户名口令数据文件。
+          缺省值：一个UUID(Universal Unique IDentifier，全局唯一标示)。
+
+===============================  mysql  ========================================
+安装 mysql
+    报错:1130-host ... is not allowed to connect to this MySql server
+
+解决方法：
+    1。 改表法。
+	可能是你的帐号不允许从远程登陆，只能在localhost。这个时候只要在localhost的那台电脑，登入mysql后，
+      更改 "mysql" 数据库里的 "user" 表里的 "host" 项，从"localhost"改称"%"
+
+	mysql -u root -pvmwaremysql>use mysql;
+
+	mysql>update user set host = '%' where user = 'root';
+
+	mysql>select host, user from user;
+
+===============================  tomcat  ========================================
+安装tomcat 
+解压就行
+
+===============================  nginx   ========================================
+卸载nginx  ——  yum remove nginx 
+
+直接安装启动的方式：
+    systemctl start nginx
+
+启动地址
+   /usr/local/nginx/sbin   启动./nginx
+
+
+nginx的配置文件nginx.conf
+    静态文件交给nginx处理配置如下
+	/usr/nginxStaticFile 目录下 的静态文件， 等同于 tomcat/webapps/projectname 里的静态文件
+	location ~\.(gif|jpg|jpeg|png|css|js)$ {
+            root /usr/nginxStaticFile;
+            expires  2h;
+        }
+
+    #upstream作负载均衡，在此配置需要轮询的服务器地址和端口号，max_fails为允许请求失败的次数，默认为1.
+    #weight为轮询权重，根据不同的权重分配可以用来平衡服务器的访问率。
+        upstream hostname {
+            server 192.168.20.133:8080 max_fails=0 weight=1;
+            server 192.168.20.135:8080 max_fails=0 weight=2;
+	    server 192.168.20.136:8080 max_fails=0 weight=2;
+        }
+
+    #启用nginx status 监听页面
+        location /nginxstatus {
+            stub_status on;
+            access_log on;
+        }
+
+    配置介绍：http://xuding.blog.51cto.com/4890434/1743666
+    
+	
+	
+	
+	
+2.linux环境下在tomcat的bin目录下，将
+JAVA_OPTS="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5888"（不要换行）
+放在catalina.sh第一行
+或者：
+CATALINA_OPTS=
+"-Xdebug  -Xrunjdwp:transport=dt_socket,address=5888,server=y,suspend=n"
+ address设置一个没有使用的端口号
+
+

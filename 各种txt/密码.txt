@@ -1,0 +1,31 @@
+adobe  cc       626418302@qq.com    Ljj123..
+
+Jquery 代码如下： 
+$(window).load(function (){ 
+       // 编写代码  
+});
+
+等价于 JavaScript 中的以下代码 
+Window.onload = function (){ 
+     // 编写代码 
+}
+
+$(document).ready(function(){
+    //do something...
+});
+ $(document).ready(function(){})可以简写成$(function(){});
+ 
+ 
+ 
+ 
+ 在js里面设置样式
+ $('#test').css({color:'red',width:'100px','background-color':'blue',textDecoration:'underline'});
+上面的代码会将id为test的元素的宽度设为100像素，文字颜色红色，背景色蓝色，并带有下划线。
+当属性有连字符“-”时，需要在属性前后加上引号（如"background-color"），或者用驼峰式写法（如textDecoration）。
+
+
+
+两种在js里面设置样式的区别
+$("#id").style.display='none'和$("#id").css("display","none");
+.style()是为元素生成样式，.css()是改变元素现有样式
+

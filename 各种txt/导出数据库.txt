@@ -1,0 +1,16 @@
+MySQL命令行导出数据库：
+ 
+1，进入MySQL目录下的bin文件夹：cd MySQL中到bin文件夹的目录
+如我输入的命令行：cd C:\Program Files\MySQL\MySQL Server 4.1\bin
+(或者直接将windows的环境变量path中添加该目录)  www.2cto.com  
+mysqldump -u root -p test>d:\test.sql 
+
+ 
+2，导出数据库：mysqldump -u 用户名 -p 数据库名 > 导出的文件名 
+如我输入的命令行:mysqldump -u root -p news > news.sql   (输入后会让你输入进入MySQL的密码)
+（如果导出单张表的话在数据库名后面输入表名即可）
+
+3、会看到文件news.sql自动生成到bin文件下  
+
+修改数据库密码为root
+mysql> set password for root@localhost = password('root'); 
