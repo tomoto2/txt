@@ -1,0 +1,72 @@
+
+<html>
+<head>
+a
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+</head>
+
+
+<body>
+
+ssss 
+<table>
+
+	
+	<tr id="datagrid-row-r1-2-5" datagrid-row-index="5" class="datagrid-row datagrid-row-alt" style="height: 35px;">
+		
+		<td field="id">
+		 <div style="height:auto;" class="datagrid-cell datagrid-cell-c1-fight_type">ff8080815fce3a95015fce3a95850000</div>
+		</td>
+		
+		<td field="status">
+		<div style="height:auto;" class="datagrid-cell datagrid-cell-c1-fight_type">拼团</div>
+		</td>
+		
+		<td field="end_time">
+		<div style="height:auto;" class="datagrid-cell datagrid-cell-c1-fight_type">2018-12-1 12:00:00</div>
+		</td>
+	
+	</tr>
+
+	
+		<tr id="datagrid-row-r1-2-5" datagrid-row-index="5" class="datagrid-row datagrid-row-alt" style="height: 35px;">
+		
+		<td field="id">
+		 <div style="height:auto;" class="datagrid-cell datagrid-cell-c1-fight_type">ff8080815fce3a95015fce3a95850001</div>
+		</td>
+		
+		<td field="status">
+		<div style="height:auto;" class="datagrid-cell datagrid-cell-c1-fight_type">拼团</div>
+		</td>
+		
+		<td field="end_time">
+		<div style="height:auto;" class="datagrid-cell datagrid-cell-c1-fight_type">2018-12-1 12:00:01</div>
+		</td>
+	
+	</tr>
+</table>
+
+
+
+<script>
+$(window).ready(function(){
+  var url = "cgAutoListController.do?del&configId=market_fight_group&id=ff8080815fce3a95015fce3a95850000";
+  var preId = url.split("&id=")[1];
+        var Id = $('td[field="id"]')
+        var EndTime = $('td[field="end_time"]')
+        for(var index =0 ;index <Id.length;index++){
+            var tdId = Id[index]
+            console.log($(tdId).children().text()) // 这是指定的id
+            var id = $(tdId).children().text()
+            if(id == preId){
+                var tdEndTime = EndTime[index]
+                console.log("zuizhong:"+$(tdEndTime).children().text()) // 这是id下面的时间
+            }
+        }
+})
+
+
+
+</script>
+</body>
+</html>
