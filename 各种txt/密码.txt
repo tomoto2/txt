@@ -1,4 +1,4 @@
-adobe  cc       626418302@qq.com    Ljj123..
+
 
 Jquery 代码如下： 
 $(window).load(function (){ 
