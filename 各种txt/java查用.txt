@@ -347,3 +347,85 @@ LockModeType --- 锁机制
 	list 安装属性排序
 	http://blog.csdn.net/yinxianluo/article/details/43761425
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<update id="update" parameterType="XXX">
+? ? ? ? ?update XX set YY
+? ? ? ? ?<choose>
+? ? ? ? ? ? ? ? <when test="dmlItem.id != null">
+? ? ? ? ? ? ? ? ? ? ? ?where ? XX1
+? ? ? ? ? ? ? ? </when>
+? ? ? ? ? ? ? ? <otherwise>
+? ? ? ? ? ? ? ? ? ? ? ?where ? XX2
+? ? ? ? ? ? ? ? ?</otherwise>
+? ? ? ? ?</choose>
+</update>
+--------------------- 
+作者：zh521zh 
+来源：CSDN 
+原文：https://blog.csdn.net/zh521zh/article/details/51566656 
+版权声明：本文为博主原创文章，转载请附上博文链接！
+
+
+
+1：		<choose>  
+             <when test="parentId !=0 ">parentTypeId=#{parentId}</when>  
+             <when test="parentId==0">parentTypeId is null</when>  
+          </choose> --> 
+		  
+2：    <if test="color!=null">  
+        	  i.personone=#{personone}
+			AND    i.persontwo=#{persontwo}
+            AND    i.color=#{color}
+          </if> 
+--------------------- 
+作者：阿皓1024 
+来源：CSDN 
+原文：https://blog.csdn.net/pqsas_com/article/details/75337608 
+版权声明：本文为博主原创文章，转载请附上博文链接！
+
+
+
+
+
+
+
+
+
+mybatis的一些特殊符号标识（大于，小于，等于，不等于）
+特殊字符   替代符号（红色基本为常用的）
+
+     &            &amp;
+
+     <            &lt;
+
+     >            &gt;
+
+     "             &quot;
+
+     '              &apos;
+
+ 
+
+小于等于    a<=b                 a &lt;= b      a <![CDATA[<= ]]>b
+
+大于等于    a>=b                 a &gt;= b      a <![CDATA[>= ]]>b
+
+不等于        a!=ba <![CDATA[ <> ]]>b      a <![CDATA[!= ]]>b
+
+ 
+
+例子：<if test="provinceId != null">
+AND <![CDATA[ province_id = #{provinceId} ]]>
+</if>
+<if test="id != null">
+AND <![CDATA[ id <> #{id} ]]>
+</if>

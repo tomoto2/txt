@@ -25,3 +25,24 @@ git push
 主要任务（2个）：学习redis，监控后台数据计算准确性
 
 touch /var/lock/subsys/local
+
+
+
+
+
+hkd git 仓库
+http://mem.tongchuangkeji.net:3000/
+
+用户名：lipengxin
+密码：lipengxin
+
+添加秘钥：
+git窗口执行：
+ ssh-keygen -t rsa -C "626418302@qq.com"
+一路回车
+ 最后进入
+ C:\Users\Administrator\.ssh
+ 将生成的  id_rsa.pub 复制下来
+ 登录仓库，点击头像——用户设置——ssh秘钥——增加秘钥，保存即可
+ 
+ 打开GitHub，登录你本人的账号，进入setting  -> SSH and GPG keys -> New SSH key， 具体如下

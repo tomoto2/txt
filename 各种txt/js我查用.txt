@@ -162,6 +162,7 @@ function dataStr(data){
 	var arr = new Array("js","java","javaScript","jquery","html");
 	for(var i=0;i<arr.length;i++){
 		var dataStr = arr[i];
+		
 		if(data.indexOf(dataStr) >= 0){
 			return false;
 		}

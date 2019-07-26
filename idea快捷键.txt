@@ -1,5 +1,6 @@
 1.双击shift   在项目的所有目录查找，就是你想看到你不想看到的和你没想过你能看到的都给你找出来
 2.ctrl+f  当前文件查找特定内容
+2.Ctrl+R，替换文本
 3.ctrl+shift+f  当前项目查找包含特定内容的文件
 4.ctrl+n  查找类
 5.ctrl+shift+n 查找文件
@@ -22,8 +23,15 @@
 12.alt+insert 提示
 13.alt+enter 代码简洁
 14.ctrl+alt+L 代码格式化
-
+15.ctrl+alt+o 自动引包
 
 
 	var gs_time=times.slice(0,4)+"-"+times.slice(4,6)+"-"+times.slice(6,8)
 							+" "+times.slice(8,10)+":"+times.slice(10,12)+":"+times.slice(12,14);
+							
+							
+Shift+Click，可以关闭文件
+Ctrl+Enter，导入包，自动修正
+13.alt+enter 代码简洁
+Ctrl +y 删除一行
+Ctrl+d 复制当前行
