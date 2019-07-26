@@ -33,8 +33,8 @@ touch /var/lock/subsys/local
 hkd git 仓库
 http://mem.tongchuangkeji.net:3000/
 
-用户名：lipengxin
-密码：lipengxin
+用户名：名字
+密码：一样
 
 添加秘钥：
 git窗口执行：
